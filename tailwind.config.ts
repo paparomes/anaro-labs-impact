@@ -27,9 +27,9 @@ export default {
 				'anaro-charcoal': '#1a1a1a',
 				'anaro-charcoal-light': '#2d2d2d',
 				'anaro-charcoal-lighter': '#404040',
-				'anaro-lime': '#9ACD32',
-				'anaro-lime-hover': '#8FBC2F',
-				'anaro-lime-light': '#B8E356',
+				'anaro-lime': '#deff9a',
+				'anaro-lime-hover': '#d4f485',
+				'anaro-lime-light': '#e7ffb3',
 				'anaro-text-primary': '#ffffff',
 				'anaro-text-secondary': '#e5e5e5',
 				'anaro-text-muted': '#a3a3a3',
@@ -94,10 +94,10 @@ export default {
 				},
 				'subtle-glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 5px rgba(154, 205, 50, 0.3)'
+						boxShadow: '0 0 5px rgba(222, 255, 154, 0.3)'
 					},
 					'50%': {
-						boxShadow: '0 0 20px rgba(154, 205, 50, 0.6)'
+						boxShadow: '0 0 20px rgba(222, 255, 154, 0.6)'
 					}
 				},
 				'lime-pulse': {
@@ -110,10 +110,10 @@ export default {
 				},
 				'cinematic-glow': {
 					'0%, 100%': {
-						textShadow: '0 0 10px rgba(154, 205, 50, 0.3)'
+						textShadow: '0 0 10px rgba(222, 255, 154, 0.3)'
 					},
 					'50%': {
-						textShadow: '0 0 20px rgba(154, 205, 50, 0.6), 0 0 30px rgba(154, 205, 50, 0.3)'
+						textShadow: '0 0 20px rgba(222, 255, 154, 0.6), 0 0 30px rgba(222, 255, 154, 0.3)'
 					}
 				}
 			},
@@ -128,7 +128,7 @@ export default {
 			backgroundImage: {
 				'anaro-gradient': 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
 				'anaro-texture': 'radial-gradient(circle at 25% 25%, #2d2d2d 0%, #1a1a1a 50%)',
-				'lime-gradient': 'linear-gradient(135deg, #9ACD32 0%, #8FBC2F 100%)',
+				'lime-gradient': 'linear-gradient(135deg, #deff9a 0%, #d4f485 100%)',
 				'cinematic-grain': 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%), url("data:image/svg+xml,%3Csvg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.02"/%3E%3C/svg%3E")',
 			},
 		}

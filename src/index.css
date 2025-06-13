@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -118,7 +117,7 @@
 .anaro-hero-bg {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(154, 205, 50, 0.03) 0%, transparent 60%),
+    radial-gradient(circle at 25% 25%, rgba(222, 255, 154, 0.03) 0%, transparent 60%),
     radial-gradient(circle at 75% 75%, rgba(45, 45, 45, 0.8) 0%, transparent 50%);
   position: relative;
 }
@@ -180,11 +179,11 @@
 
 /* Lime green glow effect */
 .lime-glow {
-  box-shadow: 0 0 20px rgba(154, 205, 50, 0.3);
+  box-shadow: 0 0 20px rgba(222, 255, 154, 0.3);
 }
 
 .lime-glow:hover {
-  box-shadow: 0 0 30px rgba(154, 205, 50, 0.5);
+  box-shadow: 0 0 30px rgba(222, 255, 154, 0.5);
 }
 
 /* Cinematic text effects */
@@ -193,18 +192,18 @@
 }
 
 .lime-accent-text {
-  color: #9ACD32;
-  text-shadow: 0 0 10px rgba(154, 205, 50, 0.3);
+  color: #deff9a;
+  text-shadow: 0 0 10px rgba(222, 255, 154, 0.3);
 }
 
 /* Professional consultation styling */
 .consultation-card {
   background: linear-gradient(135deg, rgba(45, 45, 45, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(154, 205, 50, 0.1);
+  border: 1px solid rgba(222, 255, 154, 0.1);
 }
 
 .consultation-card:hover {
-  border-color: rgba(154, 205, 50, 0.3);
-  box-shadow: 0 8px 32px rgba(154, 205, 50, 0.1);
+  border-color: rgba(222, 255, 154, 0.3);
+  box-shadow: 0 8px 32px rgba(222, 255, 154, 0.1);
 }
