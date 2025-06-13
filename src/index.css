@@ -73,51 +73,61 @@
   }
   
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-anaro-charcoal text-anaro-text-primary font-inter;
   }
 
   h1 {
-    @apply text-4xl md:text-6xl font-bold tracking-tight;
+    @apply text-4xl md:text-6xl font-bold tracking-tight text-anaro-text-primary;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+    @apply text-3xl md:text-4xl font-semibold tracking-tight text-anaro-text-primary;
   }
 
   h3 {
-    @apply text-xl md:text-2xl font-semibold;
+    @apply text-xl md:text-2xl font-semibold text-anaro-text-primary;
   }
 
   p {
-    @apply text-base md:text-lg leading-relaxed;
+    @apply text-base md:text-lg leading-relaxed text-anaro-text-secondary;
   }
 }
 
-/* Stripe-inspired components */
-.stripe-gradient-bg {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #667eea 100%);
-  background-size: 400% 400%;
-  animation: gradient-shift 8s ease-in-out infinite;
+/* Anaro Labs Brand Components */
+.anaro-card {
+  @apply bg-anaro-charcoal-light rounded-xl border border-anaro-charcoal-lighter shadow-lg hover:shadow-xl transition-all duration-300;
 }
 
-.stripe-card {
-  @apply bg-white rounded-2xl border border-stripe-gray-200 shadow-sm hover:shadow-md transition-all duration-300;
+.anaro-button-primary {
+  @apply bg-anaro-lime hover:bg-anaro-lime-hover text-anaro-charcoal px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-lg;
 }
 
-.stripe-button-primary {
-  @apply bg-stripe-purple hover:bg-stripe-navy text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
-}
-
-.stripe-button-secondary {
-  @apply border-2 border-stripe-gray-300 text-stripe-gray-700 hover:border-stripe-purple hover:text-stripe-purple px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
+.anaro-button-secondary {
+  @apply border-2 border-anaro-lime text-anaro-lime hover:bg-anaro-lime hover:text-anaro-charcoal px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
 }
 
 .section-spacing {
   @apply py-16 md:py-24;
 }
 
-.container-stripe {
+.container-anaro {
   @apply max-w-7xl mx-auto px-6 md:px-8;
+}
+
+/* Texture and gradient backgrounds */
+.anaro-hero-bg {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(154, 205, 50, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(45, 45, 45, 0.8) 0%, transparent 50%);
+}
+
+.anaro-section-bg {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+}
+
+.anaro-accent-line {
+  @apply h-1 bg-lime-gradient rounded-full;
 }
 
 /* Intersection observer animation trigger */
@@ -131,15 +141,6 @@
 }
 
 /* Custom animations */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
 @keyframes subtle-float {
   0%, 100% {
     transform: translateY(0px);
@@ -151,4 +152,13 @@
 
 .subtle-float {
   animation: subtle-float 6s ease-in-out infinite;
+}
+
+/* Lime green glow effect */
+.lime-glow {
+  box-shadow: 0 0 20px rgba(154, 205, 50, 0.3);
+}
+
+.lime-glow:hover {
+  box-shadow: 0 0 30px rgba(154, 205, 50, 0.5);
 }

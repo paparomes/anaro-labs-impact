@@ -23,23 +23,16 @@ export default {
 				'inter': ['Inter', 'sans-serif'],
 			},
 			colors: {
-				// Stripe-inspired palette
-				'stripe-navy': '#1a365d',
-				'stripe-purple': '#635bff',
-				'stripe-blue': '#667eea',
-				'stripe-indigo': '#764ba2',
-				'stripe-pink': '#f093fb',
-				'stripe-teal': '#4facfe',
-				'stripe-gray-50': '#f8fafc',
-				'stripe-gray-100': '#f1f5f9',
-				'stripe-gray-200': '#e2e8f0',
-				'stripe-gray-300': '#cbd5e1',
-				'stripe-gray-400': '#94a3b8',
-				'stripe-gray-500': '#64748b',
-				'stripe-gray-600': '#475569',
-				'stripe-gray-700': '#334155',
-				'stripe-gray-800': '#1e293b',
-				'stripe-gray-900': '#0f172a',
+				// Anaro Labs Brand Colors
+				'anaro-charcoal': '#1a1a1a',
+				'anaro-charcoal-light': '#2d2d2d',
+				'anaro-charcoal-lighter': '#404040',
+				'anaro-lime': '#9ACD32',
+				'anaro-lime-hover': '#8FBC2F',
+				'anaro-lime-light': '#B8E356',
+				'anaro-text-primary': '#ffffff',
+				'anaro-text-secondary': '#e5e5e5',
+				'anaro-text-muted': '#a3a3a3',
 				
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -99,20 +92,20 @@ export default {
 						transform: 'translateY(0)'
 					}
 				},
-				'gradient-shift': {
+				'subtle-glow': {
 					'0%, 100%': {
-						backgroundPosition: '0% 50%'
+						boxShadow: '0 0 5px rgba(154, 205, 50, 0.3)'
 					},
 					'50%': {
-						backgroundPosition: '100% 50%'
+						boxShadow: '0 0 20px rgba(154, 205, 50, 0.6)'
 					}
 				},
-				'subtle-pulse': {
+				'lime-pulse': {
 					'0%, 100%': {
 						opacity: '1'
 					},
 					'50%': {
-						opacity: '0.8'
+						opacity: '0.7'
 					}
 				}
 			},
@@ -120,16 +113,14 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
-				'gradient-shift': 'gradient-shift 8s ease-in-out infinite',
-				'subtle-pulse': 'subtle-pulse 3s ease-in-out infinite',
+				'subtle-glow': 'subtle-glow 3s ease-in-out infinite',
+				'lime-pulse': 'lime-pulse 2s ease-in-out infinite',
 			},
 			backgroundImage: {
-				'stripe-gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #667eea 100%)',
-				'stripe-hero': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+				'anaro-gradient': 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
+				'anaro-texture': 'radial-gradient(circle at 25% 25%, #2d2d2d 0%, #1a1a1a 50%)',
+				'lime-gradient': 'linear-gradient(135deg, #9ACD32 0%, #8FBC2F 100%)',
 			},
-			backgroundSize: {
-				'400%': '400% 400%',
-			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
