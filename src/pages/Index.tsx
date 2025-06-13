@@ -1,10 +1,9 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { ChevronDown, ArrowRight, CheckCircle, Star, Users, TrendingUp, Globe } from 'lucide-react';
+import { ChevronDown, ArrowRight, CheckCircle, Star, Users, TrendingUp, Globe, Target, Search, Handshake, Wrench } from 'lucide-react';
 
 const Index = () => {
   const { toast } = useToast();
@@ -131,27 +130,26 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto animate-fade-in-up">
             <h1 className="text-5xl md:text-7xl font-bold font-poppins mb-6 leading-tight">
-              I help ambitious companies{' '}
-              <span className="text-soft-coral">win with AI</span>{' '}
-              - without the hype or vendor lock-in
+              I've spent 13 years scaling customer operations at{' '}
+              <span className="text-soft-coral">Netflix, GetYourGuide, and Delivery Hero</span>{' '}
+              . Now I help companies bridge the gap between AI potential and operational reality.
             </h1>
             <p className="text-xl md:text-2xl text-medium-gray mb-8 leading-relaxed">
-              Leveraging 10+ years of scaling operations at Netflix, GetYourGuide, and Delivery Hero 
-              to make AI actually work for your business
+              I'm not another AI consultant selling theory. I'm the operations leader who's been implementing these solutions while everyone else was still reading about them.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-soft-coral hover:bg-soft-coral/90 text-white px-8 py-6 text-lg font-medium rounded-lg transition-all duration-300 hover:scale-105 min-w-[200px]"
               >
-                Book Strategy Call
+                Let's Talk Strategy
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
                 variant="outline" 
                 className="border-2 border-lavender text-lavender hover:bg-lavender hover:text-white px-8 py-6 text-lg font-medium rounded-lg transition-all duration-300 hover:scale-105 min-w-[200px]"
               >
-                Download AI Guide
+                See My Work
               </Button>
             </div>
           </div>
@@ -171,29 +169,28 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16 animate-on-scroll">
             <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-6">
-              Three Core Services
+              Four Core Services
             </h2>
             <p className="text-xl text-medium-gray max-w-3xl mx-auto">
               Practical solutions backed by enterprise-scale experience
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {/* Service 1 */}
             <div className="animate-on-scroll group">
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-sage-green">
                 <div className="w-16 h-16 bg-sage-green/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-green/20 transition-colors">
-                  <Users className="h-8 w-8 text-sage-green" />
+                  <Target className="h-8 w-8 text-sage-green" />
                 </div>
                 <h3 className="text-2xl font-bold font-poppins mb-4 text-charcoal">
-                  AI Learning Path
+                  AI Learning & Adoption
                 </h3>
                 <p className="text-lg font-semibold text-sage-green mb-4">
-                  "Making AI Work"
+                  Getting teams from curious to confident
                 </p>
                 <p className="text-medium-gray leading-relaxed">
-                  Transform your workforce from AI-curious to AI-capable with practical, 
-                  business-focused training that delivers measurable results.
+                  I've trained hundreds of team members on AI implementation. Not abstract workshops - practical frameworks that work when you're managing real operations with real deadlines.
                 </p>
               </div>
             </div>
@@ -202,17 +199,16 @@ const Index = () => {
             <div className="animate-on-scroll group" style={{ animationDelay: '0.2s' }}>
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-lavender">
                 <div className="w-16 h-16 bg-lavender/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-lavender/20 transition-colors">
-                  <Star className="h-8 w-8 text-lavender" />
+                  <Search className="h-8 w-8 text-lavender" />
                 </div>
                 <h3 className="text-2xl font-bold font-poppins mb-4 text-charcoal">
-                  AI Purchasing Advisory
+                  AI Solution Advisory
                 </h3>
                 <p className="text-lg font-semibold text-lavender mb-4">
-                  Cut through vendor noise
+                  Making sense of the vendor landscape
                 </p>
                 <p className="text-medium-gray leading-relaxed">
-                  Battle-tested evaluation frameworks from enterprise-scale implementations. 
-                  Make confident AI investment decisions backed by real experience.
+                  I've been on evaluation teams for major AI implementations. I know which vendors overpromise, which ones actually deliver, and how to structure evaluations that lead to decisions you won't regret.
                 </p>
               </div>
             </div>
@@ -221,17 +217,34 @@ const Index = () => {
             <div className="animate-on-scroll group" style={{ animationDelay: '0.4s' }}>
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-peach">
                 <div className="w-16 h-16 bg-peach/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-peach/20 transition-colors">
-                  <Globe className="h-8 w-8 text-peach" />
+                  <Handshake className="h-8 w-8 text-peach" />
                 </div>
                 <h3 className="text-2xl font-bold font-poppins mb-4 text-charcoal">
-                  BPO Matchmaking
+                  AI-Ready BPO Partnerships
                 </h3>
                 <p className="text-lg font-semibold text-peach mb-4">
-                  Your unfair advantage
+                  Operations expertise meets AI strategy
                 </p>
                 <p className="text-medium-gray leading-relaxed">
-                  8 years managing 800-1100 FTE across multiple vendors. 
-                  Make outsourcing decisions with confidence and insider knowledge.
+                  8 years managing 800-1100 FTE across multiple vendors taught me something most consultants miss: the best AI strategy means nothing if your operations can't execute it.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 4 - New */}
+            <div className="animate-on-scroll group" style={{ animationDelay: '0.6s' }}>
+              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-soft-coral">
+                <div className="w-16 h-16 bg-soft-coral/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-soft-coral/20 transition-colors">
+                  <Wrench className="h-8 w-8 text-soft-coral" />
+                </div>
+                <h3 className="text-2xl font-bold font-poppins mb-4 text-charcoal">
+                  Custom AI Solutions
+                </h3>
+                <p className="text-lg font-semibold text-soft-coral mb-4">
+                  Building what doesn't exist yet
+                </p>
+                <p className="text-medium-gray leading-relaxed">
+                  Sometimes the solution you need doesn't exist on the shelf. I'm currently building chatbots for gym owners and newsletter systems for creative directors - because implementation beats presentation every time.
                 </p>
               </div>
             </div>
@@ -244,10 +257,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-on-scroll">
             <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-6">
-              Proven Results
+              Real outcomes from hands-on implementation
             </h2>
             <p className="text-xl text-medium-gray max-w-3xl mx-auto">
-              Real outcomes from enterprise-scale implementations
+              Numbers that matter when you're actually running operations
             </p>
           </div>
 
@@ -304,15 +317,15 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Global Experience */}
+            {/* Experience */}
             <div className="animate-on-scroll bg-gradient-to-br from-medium-gray/5 to-medium-gray/10 p-8 rounded-2xl">
               <div className="text-center">
                 <div className="mb-4">
-                  <AnimatedCounter end={10} suffix="+" />
+                  <AnimatedCounter end={13} suffix="+" />
                 </div>
                 <h3 className="text-xl font-bold font-poppins mb-2 text-charcoal">Years</h3>
                 <p className="text-medium-gray">
-                  Enterprise operations experience
+                  Turning customer service from cost center to competitive advantage
                 </p>
               </div>
             </div>
@@ -329,28 +342,25 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
               <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-6">
-                Why Different
+                I've been implementing AI in operations while most consultants were learning what it stands for.
               </h2>
-              <p className="text-2xl font-semibold text-soft-coral mb-8">
-                "Most consultants theorize. I've lived it."
-              </p>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="h-6 w-6 text-sage-green mt-1 flex-shrink-0" />
                   <p className="text-lg text-medium-gray">
-                    <strong className="text-charcoal">Hands-on experience:</strong> Managed 800-1100 FTE operations across Netflix, GetYourGuide, and Delivery Hero
+                    <strong className="text-charcoal">Operations-first perspective:</strong> I've managed P&Ls, scaled teams, and dealt with vendor contracts. AI strategy that ignores operational reality is just expensive PowerPoint.
                   </p>
                 </div>
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="h-6 w-6 text-sage-green mt-1 flex-shrink-0" />
                   <p className="text-lg text-medium-gray">
-                    <strong className="text-charcoal">Vendor-agnostic approach:</strong> Real implementation experience, not theoretical frameworks
+                    <strong className="text-charcoal">Implementation experience:</strong> I don't just recommend solutions - I've been part of evaluation teams, managed rollouts, and dealt with the messy reality of making new technology work.
                   </p>
                 </div>
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="h-6 w-6 text-sage-green mt-1 flex-shrink-0" />
                   <p className="text-lg text-medium-gray">
-                    <strong className="text-charcoal">Business outcomes focus:</strong> Technology serves business goals, not the other way around
+                    <strong className="text-charcoal">Full-stack approach:</strong> From strategy workshops to custom development. I've built chatbots for small businesses and advised on enterprise implementations.
                   </p>
                 </div>
               </div>
@@ -380,10 +390,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-on-scroll">
             <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-6">
-              Speaking & Advisory
+              Beyond consulting: workshops, keynotes, and strategic advisory
             </h2>
             <p className="text-xl text-medium-gray max-w-3xl mx-auto">
-              Available for keynotes, workshops, and strategic advisory beyond core services
+              Available for custom engagements that don't fit the standard consulting box
             </p>
           </div>
 
@@ -427,10 +437,9 @@ const Index = () => {
 
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="animate-on-scroll">
-                <h3 className="text-2xl font-bold font-poppins mb-6">Ready to make AI work for your business?</h3>
+                <h3 className="text-2xl font-bold font-poppins mb-6">Ready to make AI actually work for your operations?</h3>
                 <p className="text-warm-white/80 mb-8 leading-relaxed">
-                  Whether you're looking to implement AI, optimize operations, or make better vendor decisions, 
-                  let's discuss how my experience can help you achieve your goals.
+                  Whether you're evaluating vendors, training teams, or need something built from scratch - let's discuss how 13 years of operations experience translates to better AI decisions.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
