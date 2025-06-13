@@ -4,9 +4,10 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { ChevronDown, ArrowRight, CheckCircle, Star, Users, TrendingUp, Globe, Target, Search, Handshake, Wrench } from 'lucide-react';
-
 const Index = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,63 +24,60 @@ const Index = () => {
 
   // Intersection Observer for animations
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
       observer.observe(el);
     });
-
     return () => observer.disconnect();
   }, []);
 
   // Animated counter component
-  const AnimatedCounter = ({ end, duration = 2000, suffix = '' }: { end: number; duration?: number; suffix?: string }) => {
+  const AnimatedCounter = ({
+    end,
+    duration = 2000,
+    suffix = ''
+  }: {
+    end: number;
+    duration?: number;
+    suffix?: string;
+  }) => {
     const [count, setCount] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
-
     useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting && !isVisible) {
-            setIsVisible(true);
-            let start = 0;
-            const increment = end / (duration / 16);
-            const timer = setInterval(() => {
-              start += increment;
-              if (start >= end) {
-                setCount(end);
-                clearInterval(timer);
-              } else {
-                setCount(Math.floor(start));
-              }
-            }, 16);
-          }
-        },
-        { threshold: 0.5 }
-      );
-
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+          let start = 0;
+          const increment = end / (duration / 16);
+          const timer = setInterval(() => {
+            start += increment;
+            if (start >= end) {
+              setCount(end);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(start));
+            }
+          }, 16);
+        }
+      }, {
+        threshold: 0.5
+      });
       const element = document.getElementById(`counter-${end}`);
       if (element) observer.observe(element);
-
       return () => observer.disconnect();
     }, [end, duration, isVisible]);
-
-    return (
-      <span id={`counter-${end}`} className="text-4xl md:text-5xl font-bold font-poppins text-soft-coral">
+    return <span id={`counter-${end}`} className="text-4xl md:text-5xl font-bold font-poppins text-soft-coral">
         {count}{suffix}
-      </span>
-    );
+      </span>;
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
@@ -87,11 +85,14 @@ const Index = () => {
       description: "Thank you for your interest. I'll get back to you within 24 hours.",
       className: "bg-sage-green text-white"
     });
-    setFormData({ name: '', email: '', company: '', message: '' });
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      message: ''
+    });
   };
-
-  return (
-    <div className="min-h-screen bg-warm-white text-charcoal font-inter">
+  return <div className="min-h-screen bg-warm-white text-charcoal font-inter">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-warm-white/90 backdrop-blur-md z-50 border-b border-light-gray">
         <div className="container mx-auto px-4 py-4">
@@ -122,14 +123,20 @@ const Index = () => {
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-32 h-32 bg-sage-green/10 rounded-full animate-float"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-lavender/10 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-40 left-20 w-40 h-40 bg-peach/10 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
-          <div className="absolute bottom-20 right-10 w-28 h-28 bg-soft-coral/10 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-lavender/10 rounded-full animate-float" style={{
+          animationDelay: '2s'
+        }}></div>
+          <div className="absolute bottom-40 left-20 w-40 h-40 bg-peach/10 rounded-full animate-float" style={{
+          animationDelay: '4s'
+        }}></div>
+          <div className="absolute bottom-20 right-10 w-28 h-28 bg-soft-coral/10 rounded-full animate-float" style={{
+          animationDelay: '1s'
+        }}></div>
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-bold font-poppins mb-6 leading-tight">
+            <h1 className="text-5xl font-bold font-poppins mb-6 leading-tight md:text-5xl">
               I've spent 13 years scaling customer operations at{' '}
               <span className="text-soft-coral">Netflix, GetYourGuide, and Delivery Hero</span>{' '}
               . Now I help companies bridge the gap between AI potential and operational reality.
@@ -138,17 +145,11 @@ const Index = () => {
               I'm not another AI consultant selling theory. I'm the operations leader who's been implementing these solutions while everyone else was still reading about them.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                onClick={() => scrollToSection('contact')}
-                className="bg-soft-coral hover:bg-soft-coral/90 text-white px-8 py-6 text-lg font-medium rounded-lg transition-all duration-300 hover:scale-105 min-w-[200px]"
-              >
+              <Button onClick={() => scrollToSection('contact')} className="bg-soft-coral hover:bg-soft-coral/90 text-white px-8 py-6 text-lg font-medium rounded-lg transition-all duration-300 hover:scale-105 min-w-[200px]">
                 Let's Talk Strategy
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button 
-                variant="outline" 
-                className="border-2 border-lavender text-lavender hover:bg-lavender hover:text-white px-8 py-6 text-lg font-medium rounded-lg transition-all duration-300 hover:scale-105 min-w-[200px]"
-              >
+              <Button variant="outline" className="border-2 border-lavender text-lavender hover:bg-lavender hover:text-white px-8 py-6 text-lg font-medium rounded-lg transition-all duration-300 hover:scale-105 min-w-[200px]">
                 See My Work
               </Button>
             </div>
@@ -196,7 +197,9 @@ const Index = () => {
             </div>
 
             {/* Service 2 */}
-            <div className="animate-on-scroll group" style={{ animationDelay: '0.2s' }}>
+            <div className="animate-on-scroll group" style={{
+            animationDelay: '0.2s'
+          }}>
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-lavender">
                 <div className="w-16 h-16 bg-lavender/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-lavender/20 transition-colors">
                   <Search className="h-8 w-8 text-lavender" />
@@ -214,7 +217,9 @@ const Index = () => {
             </div>
 
             {/* Service 3 */}
-            <div className="animate-on-scroll group" style={{ animationDelay: '0.4s' }}>
+            <div className="animate-on-scroll group" style={{
+            animationDelay: '0.4s'
+          }}>
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-peach">
                 <div className="w-16 h-16 bg-peach/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-peach/20 transition-colors">
                   <Handshake className="h-8 w-8 text-peach" />
@@ -232,7 +237,9 @@ const Index = () => {
             </div>
 
             {/* Service 4 - New */}
-            <div className="animate-on-scroll group" style={{ animationDelay: '0.6s' }}>
+            <div className="animate-on-scroll group" style={{
+            animationDelay: '0.6s'
+          }}>
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-soft-coral">
                 <div className="w-16 h-16 bg-soft-coral/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-soft-coral/20 transition-colors">
                   <Wrench className="h-8 w-8 text-soft-coral" />
@@ -279,7 +286,9 @@ const Index = () => {
             </div>
 
             {/* GetYourGuide */}
-            <div className="animate-on-scroll bg-gradient-to-br from-sage-green/5 to-sage-green/10 p-8 rounded-2xl" style={{ animationDelay: '0.2s' }}>
+            <div className="animate-on-scroll bg-gradient-to-br from-sage-green/5 to-sage-green/10 p-8 rounded-2xl" style={{
+            animationDelay: '0.2s'
+          }}>
               <div className="text-center">
                 <div className="mb-4">
                   <AnimatedCounter end={85} suffix="%" />
@@ -292,7 +301,9 @@ const Index = () => {
             </div>
 
             {/* Scale Achievement */}
-            <div className="animate-on-scroll bg-gradient-to-br from-lavender/5 to-lavender/10 p-8 rounded-2xl" style={{ animationDelay: '0.4s' }}>
+            <div className="animate-on-scroll bg-gradient-to-br from-lavender/5 to-lavender/10 p-8 rounded-2xl" style={{
+            animationDelay: '0.4s'
+          }}>
               <div className="text-center">
                 <div className="mb-4 flex items-center justify-center">
                   <span className="text-4xl md:text-5xl font-bold font-poppins text-soft-coral">50→500+</span>
@@ -365,7 +376,9 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="animate-on-scroll relative" style={{ animationDelay: '0.3s' }}>
+            <div className="animate-on-scroll relative" style={{
+            animationDelay: '0.3s'
+          }}>
               <div className="bg-white p-8 rounded-2xl shadow-lg relative">
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-soft-coral/20 to-peach/20 rounded-full"></div>
                 <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-sage-green/20 to-lavender/20 rounded-full"></div>
@@ -402,15 +415,21 @@ const Index = () => {
               <h3 className="font-bold font-poppins text-charcoal mb-2">AI Adoption Strategy</h3>
               <p className="text-medium-gray text-sm">Practical frameworks for enterprise AI implementation</p>
             </div>
-            <div className="animate-on-scroll bg-light-gray p-6 rounded-xl border-l-4 border-sage-green" style={{ animationDelay: '0.1s' }}>
+            <div className="animate-on-scroll bg-light-gray p-6 rounded-xl border-l-4 border-sage-green" style={{
+            animationDelay: '0.1s'
+          }}>
               <h3 className="font-bold font-poppins text-charcoal mb-2">BPO Optimization</h3>
               <p className="text-medium-gray text-sm">Maximize outsourcing ROI with proven strategies</p>
             </div>
-            <div className="animate-on-scroll bg-light-gray p-6 rounded-xl border-l-4 border-lavender" style={{ animationDelay: '0.2s' }}>
+            <div className="animate-on-scroll bg-light-gray p-6 rounded-xl border-l-4 border-lavender" style={{
+            animationDelay: '0.2s'
+          }}>
               <h3 className="font-bold font-poppins text-charcoal mb-2">Scaling Operations</h3>
               <p className="text-medium-gray text-sm">From 50 to 500+ FTE without losing quality</p>
             </div>
-            <div className="animate-on-scroll bg-light-gray p-6 rounded-xl border-l-4 border-peach" style={{ animationDelay: '0.3s' }}>
+            <div className="animate-on-scroll bg-light-gray p-6 rounded-xl border-l-4 border-peach" style={{
+            animationDelay: '0.3s'
+          }}>
               <h3 className="font-bold font-poppins text-charcoal mb-2">Vendor Evaluation</h3>
               <p className="text-medium-gray text-sm">Battle-tested frameworks for technology decisions</p>
             </div>
@@ -422,7 +441,9 @@ const Index = () => {
       <section id="contact" className="py-20 bg-charcoal text-warm-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-32 h-32 bg-soft-coral/10 rounded-full animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-24 h-24 bg-sage-green/10 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute bottom-20 right-10 w-24 h-24 bg-sage-green/10 rounded-full animate-float" style={{
+          animationDelay: '3s'
+        }}></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -457,42 +478,29 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="animate-on-scroll" style={{ animationDelay: '0.3s' }}>
+              <div className="animate-on-scroll" style={{
+              animationDelay: '0.3s'
+            }}>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
-                    <Input
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      className="bg-warm-white/10 border-warm-white/20 text-warm-white placeholder:text-warm-white/60"
-                      required
-                    />
-                    <Input
-                      type="email"
-                      placeholder="Email Address"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="bg-warm-white/10 border-warm-white/20 text-warm-white placeholder:text-warm-white/60"
-                      required
-                    />
+                    <Input placeholder="Your Name" value={formData.name} onChange={e => setFormData({
+                    ...formData,
+                    name: e.target.value
+                  })} className="bg-warm-white/10 border-warm-white/20 text-warm-white placeholder:text-warm-white/60" required />
+                    <Input type="email" placeholder="Email Address" value={formData.email} onChange={e => setFormData({
+                    ...formData,
+                    email: e.target.value
+                  })} className="bg-warm-white/10 border-warm-white/20 text-warm-white placeholder:text-warm-white/60" required />
                   </div>
-                  <Input
-                    placeholder="Company"
-                    value={formData.company}
-                    onChange={(e) => setFormData({...formData, company: e.target.value})}
-                    className="bg-warm-white/10 border-warm-white/20 text-warm-white placeholder:text-warm-white/60"
-                  />
-                  <Textarea
-                    placeholder="Tell me about your AI or operations challenge..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className="bg-warm-white/10 border-warm-white/20 text-warm-white placeholder:text-warm-white/60 min-h-[120px]"
-                    required
-                  />
-                  <Button 
-                    type="submit"
-                    className="w-full bg-soft-coral hover:bg-soft-coral/90 text-white py-6 text-lg font-medium rounded-lg transition-all duration-300 hover:scale-105"
-                  >
+                  <Input placeholder="Company" value={formData.company} onChange={e => setFormData({
+                  ...formData,
+                  company: e.target.value
+                })} className="bg-warm-white/10 border-warm-white/20 text-warm-white placeholder:text-warm-white/60" />
+                  <Textarea placeholder="Tell me about your AI or operations challenge..." value={formData.message} onChange={e => setFormData({
+                  ...formData,
+                  message: e.target.value
+                })} className="bg-warm-white/10 border-warm-white/20 text-warm-white placeholder:text-warm-white/60 min-h-[120px]" required />
+                  <Button type="submit" className="w-full bg-soft-coral hover:bg-soft-coral/90 text-white py-6 text-lg font-medium rounded-lg transition-all duration-300 hover:scale-105">
                     Send Message
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -520,8 +528,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
