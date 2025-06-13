@@ -73,23 +73,23 @@
   }
   
   body {
-    @apply bg-anaro-charcoal text-anaro-text-primary font-inter;
+    @apply bg-anaro-charcoal text-anaro-text-primary font-urbanist;
   }
 
   h1 {
-    @apply text-4xl md:text-6xl font-bold tracking-tight text-anaro-text-primary;
+    @apply text-4xl md:text-6xl font-bold tracking-tight text-anaro-text-primary font-urbanist;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-semibold tracking-tight text-anaro-text-primary;
+    @apply text-3xl md:text-4xl font-semibold tracking-tight text-anaro-text-primary font-urbanist;
   }
 
   h3 {
-    @apply text-xl md:text-2xl font-semibold text-anaro-text-primary;
+    @apply text-xl md:text-2xl font-semibold text-anaro-text-primary font-urbanist;
   }
 
   p {
-    @apply text-base md:text-lg leading-relaxed text-anaro-text-secondary;
+    @apply text-base md:text-lg leading-relaxed text-anaro-text-secondary font-urbanist;
   }
 }
 
@@ -99,11 +99,11 @@
 }
 
 .anaro-button-primary {
-  @apply bg-anaro-lime hover:bg-anaro-lime-hover text-anaro-charcoal px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-lg;
+  @apply bg-anaro-lime hover:bg-anaro-lime-hover text-anaro-charcoal px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-lg font-urbanist;
 }
 
 .anaro-button-secondary {
-  @apply border-2 border-anaro-lime text-anaro-lime hover:bg-anaro-lime hover:text-anaro-charcoal px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
+  @apply border-2 border-anaro-lime text-anaro-lime hover:bg-anaro-lime hover:text-anaro-charcoal px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] font-urbanist;
 }
 
 .section-spacing {
@@ -118,12 +118,36 @@
 .anaro-hero-bg {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(154, 205, 50, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 25% 25%, rgba(154, 205, 50, 0.03) 0%, transparent 60%),
     radial-gradient(circle at 75% 75%, rgba(45, 45, 45, 0.8) 0%, transparent 50%);
+  position: relative;
+}
+
+.anaro-hero-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+  pointer-events: none;
 }
 
 .anaro-section-bg {
   background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  position: relative;
+}
+
+.anaro-section-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
+  pointer-events: none;
 }
 
 .anaro-accent-line {
@@ -161,4 +185,26 @@
 
 .lime-glow:hover {
   box-shadow: 0 0 30px rgba(154, 205, 50, 0.5);
+}
+
+/* Cinematic text effects */
+.cinematic-text {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.lime-accent-text {
+  color: #9ACD32;
+  text-shadow: 0 0 10px rgba(154, 205, 50, 0.3);
+}
+
+/* Professional consultation styling */
+.consultation-card {
+  background: linear-gradient(135deg, rgba(45, 45, 45, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(154, 205, 50, 0.1);
+}
+
+.consultation-card:hover {
+  border-color: rgba(154, 205, 50, 0.3);
+  box-shadow: 0 8px 32px rgba(154, 205, 50, 0.1);
 }

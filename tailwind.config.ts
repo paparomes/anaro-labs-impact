@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,6 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				'urbanist': ['Urbanist', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
 			},
 			colors: {
@@ -107,6 +107,14 @@ export default {
 					'50%': {
 						opacity: '0.7'
 					}
+				},
+				'cinematic-glow': {
+					'0%, 100%': {
+						textShadow: '0 0 10px rgba(154, 205, 50, 0.3)'
+					},
+					'50%': {
+						textShadow: '0 0 20px rgba(154, 205, 50, 0.6), 0 0 30px rgba(154, 205, 50, 0.3)'
+					}
 				}
 			},
 			animation: {
@@ -115,11 +123,13 @@ export default {
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
 				'subtle-glow': 'subtle-glow 3s ease-in-out infinite',
 				'lime-pulse': 'lime-pulse 2s ease-in-out infinite',
+				'cinematic-glow': 'cinematic-glow 3s ease-in-out infinite',
 			},
 			backgroundImage: {
 				'anaro-gradient': 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
 				'anaro-texture': 'radial-gradient(circle at 25% 25%, #2d2d2d 0%, #1a1a1a 50%)',
 				'lime-gradient': 'linear-gradient(135deg, #9ACD32 0%, #8FBC2F 100%)',
+				'cinematic-grain': 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%), url("data:image/svg+xml,%3Csvg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.02"/%3E%3C/svg%3E")',
 			},
 		}
 	},
