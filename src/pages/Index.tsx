@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -115,21 +114,13 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={() => scrollToSection('contact')} 
-                  className="stripe-button-primary"
-                >
-                  Cut Through The Noise
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="stripe-button-secondary"
-                >
-                  See The Signal
-                </Button>
-              </div>
+              <Button 
+                onClick={() => scrollToSection('contact')} 
+                className="stripe-button-primary"
+              >
+                Cut Through The Noise
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </div>
             
             <div className="animate-on-scroll hidden lg:block" style={{ animationDelay: '0.2s' }}>
