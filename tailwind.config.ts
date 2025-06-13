@@ -21,18 +21,18 @@ export default {
 		extend: {
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
-				'poppins': ['Poppins', 'sans-serif'],
+				'space': ['Space Grotesk', 'sans-serif'],
 			},
 			colors: {
-				// Custom Anaro Labs color palette
-				'warm-white': '#fafafa',
-				'charcoal': '#2c2c2c',
-				'medium-gray': '#6b7280',
-				'light-gray': '#f3f4f6',
-				'soft-coral': '#ff9999',
-				'sage-green': '#a7c4a0',
-				'lavender': '#b4a7d6',
-				'peach': '#ffcc9a',
+				// Signal vs Noise theme colors
+				'signal-yellow': 'hsl(47 96% 89%)',
+				'noise-red': 'hsl(339 90% 51%)',
+				'focus-blue': 'hsl(217 91% 60%)',
+				'progress-green': 'hsl(142 71% 45%)',
+				'warning-orange': 'hsl(25 95% 53%)',
+				'deep-dark': 'hsl(8 8% 8%)',
+				'mid-dark': 'hsl(12 12% 12%)',
+				'soft-dark': 'hsl(24 10% 20%)',
 				
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -66,16 +66,6 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
 			borderRadius: {
@@ -85,85 +75,37 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				},
-				'fade-in-up': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateY(30px)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateY(0)'
-					}
+				'signal-pulse': {
+					'0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+					'50%': { opacity: '1', transform: 'scale(1.05)' }
 				},
-				'fade-in': {
-					'0%': {
-						opacity: '0'
-					},
-					'100%': {
-						opacity: '1'
-					}
+				'cut-through': {
+					'0%': { transform: 'translateX(-100%) skewX(-15deg)' },
+					'100%': { transform: 'translateX(100%) skewX(-15deg)' }
 				},
-				'slide-in-left': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateX(-30px)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateX(0)'
-					}
+				'noise-static': {
+					'0%, 100%': { opacity: '0.1' },
+					'50%': { opacity: '0.3' }
 				},
-				'slide-in-right': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateX(30px)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateX(0)'
-					}
-				},
-				'counter': {
-					'0%': {
-						transform: 'translateY(100%)'
-					},
-					'100%': {
-						transform: 'translateY(0)'
-					}
-				},
-				'float': {
-					'0%, 100%': {
-						transform: 'translateY(0px)'
-					},
-					'50%': {
-						transform: 'translateY(-10px)'
-					}
+				'signal-beam': {
+					'0%': { width: '0%' },
+					'100%': { width: '100%' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in-up': 'fade-in-up 0.6s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out',
-				'slide-in-left': 'slide-in-left 0.6s ease-out',
-				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'counter': 'counter 0.6s ease-out',
-				'float': 'float 6s ease-in-out infinite'
+				'signal-pulse': 'signal-pulse 3s ease-in-out infinite',
+				'cut-through': 'cut-through 2s ease-out',
+				'noise-static': 'noise-static 1.5s ease-in-out infinite',
+				'signal-beam': 'signal-beam 1s ease-out'
 			}
 		}
 	},
