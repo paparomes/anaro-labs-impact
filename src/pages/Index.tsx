@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -55,8 +54,12 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-anaro-charcoal/90 backdrop-blur-md border-b border-anaro-charcoal-lighter z-50">
         <div className="container-anaro">
           <div className="flex justify-between items-center py-4">
-            <div className="font-bold text-2xl text-anaro-text-primary">
-              Anaro<span className="text-anaro-lime">Lab</span>
+            <div className="flex items-center">
+              <img 
+                src="/lovable-uploads/26559323-0f01-464c-b33d-cb23837b1598.png" 
+                alt="Anaro Labs Logo" 
+                className="h-8 w-auto"
+              />
             </div>
             <div className="hidden md:flex space-x-8">
               <button 
@@ -365,8 +368,12 @@ const Index = () => {
       <footer className="bg-anaro-charcoal border-t border-anaro-charcoal-lighter py-12">
         <div className="container-anaro">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="font-bold text-2xl text-anaro-text-primary mb-4 md:mb-0">
-              Anaro<span className="text-anaro-lime">Lab</span>
+            <div className="flex items-center mb-4 md:mb-0">
+              <img 
+                src="/lovable-uploads/26559323-0f01-464c-b33d-cb23837b1598.png" 
+                alt="Anaro Labs Logo" 
+                className="h-6 w-auto"
+              />
             </div>
             <div className="flex space-x-8">
               <a href="#" className="text-anaro-text-muted hover:text-anaro-lime transition-colors">LinkedIn</a>
