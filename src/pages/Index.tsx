@@ -82,18 +82,6 @@ const Index = () => {
               
               <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium mb-12 max-w-4xl mx-auto leading-relaxed">I help business operations teams get the very best out of GenAI</h2>
 
-              {/* Split-screen visual concept */}
-              <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
-                <div className="bg-red-900/20 p-8 rounded-2xl border border-red-500/20">
-                  <Users className="h-12 w-12 text-red-400 mx-auto mb-4" />
-                  <p className="text-red-200 font-medium">Teams overwhelmed by AI tools</p>
-                </div>
-                <div className="bg-anaro-lime/10 p-8 rounded-2xl border border-anaro-lime/20">
-                  <TrendingUp className="h-12 w-12 text-anaro-lime mx-auto mb-4" />
-                  <p className="text-anaro-lime font-medium">Teams confidently using AI</p>
-                </div>
-              </div>
-
               <Button onClick={() => scrollToSection('problem')} className="anaro-button-secondary text-lg px-8 py-6 lime-glow">
                 See how it works
                 <ArrowDown className="ml-2 h-5 w-5" />
