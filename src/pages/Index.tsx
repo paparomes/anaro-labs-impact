@@ -81,11 +81,6 @@ const Index = () => {
               <div className="anaro-accent-line w-32 mx-auto mb-8"></div>
               
               <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium mb-12 max-w-4xl mx-auto leading-relaxed">I help business operations teams get the very best out of GenAI</h2>
-
-              <Button onClick={() => scrollToSection('problem')} className="anaro-button-secondary text-lg px-8 py-6 lime-glow">
-                See how it works
-                <ArrowDown className="ml-2 h-5 w-5" />
-              </Button>
             </div>
           </div>
         </div>
