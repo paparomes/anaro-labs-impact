@@ -3,26 +3,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { 
-  ArrowRight, 
-  ArrowDown, 
-  Puzzle, 
-  Clock, 
-  Mountain, 
-  Video,
-  Users,
-  TrendingUp,
-  CheckCircle,
-  Calendar,
-  Shield,
-  Network,
-  Target
-} from 'lucide-react';
+import { ArrowRight, ArrowDown, Puzzle, Clock, Mountain, Video, Users, TrendingUp, CheckCircle, Calendar, Shield, Network, Target } from 'lucide-react';
 import ROICalculator from '@/components/ROICalculator';
 import ProcessTimeline from '@/components/ProcessTimeline';
-
 const Index = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,56 +19,49 @@ const Index = () => {
 
   // Smooth scroll function
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
 
   // Intersection Observer for animations
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
       observer.observe(el);
     });
-
     return () => observer.disconnect();
   }, []);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Discovery call request sent!",
-      description: "I'll respond within 24 hours to schedule your consultation.",
+      description: "I'll respond within 24 hours to schedule your consultation."
     });
-    setFormData({ name: '', email: '', company: '', message: '' });
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      message: ''
+    });
   };
-
-  return (
-    <div className="min-h-screen bg-anaro-charcoal text-anaro-text-primary">
+  return <div className="min-h-screen bg-anaro-charcoal text-anaro-text-primary">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-anaro-charcoal/95 backdrop-blur-md border-b border-anaro-charcoal-lighter z-50">
         <div className="container-anaro">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <img 
-                src="/lovable-uploads/26559323-0f01-464c-b33d-cb23837b1598.png" 
-                alt="Roman Siepelmeyer Logo" 
-                className="h-8 w-auto"
-              />
+              <img src="/lovable-uploads/26559323-0f01-464c-b33d-cb23837b1598.png" alt="Roman Siepelmeyer Logo" className="h-8 w-auto" />
             </div>
-            <Button 
-              onClick={() => scrollToSection('conversion')} 
-              className="anaro-button-primary"
-              size="sm"
-            >
+            <Button onClick={() => scrollToSection('conversion')} className="anaro-button-primary" size="sm">
               Book Discovery Call
             </Button>
           </div>
@@ -100,9 +80,7 @@ const Index = () => {
               
               <div className="anaro-accent-line w-32 mx-auto mb-8"></div>
               
-              <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium mb-12 max-w-4xl mx-auto leading-relaxed">
-                I help business operations teams (FP&A, HR, Customer Service) turn GenAI anxiety into competitive advantage
-              </h2>
+              <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium mb-12 max-w-4xl mx-auto leading-relaxed">I help business operations teams get the very best out of GenAI</h2>
 
               {/* Split-screen visual concept */}
               <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
@@ -116,10 +94,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <Button 
-                onClick={() => scrollToSection('problem')} 
-                className="anaro-button-secondary text-lg px-8 py-6 lime-glow"
-              >
+              <Button onClick={() => scrollToSection('problem')} className="anaro-button-secondary text-lg px-8 py-6 lime-glow">
                 See how it works
                 <ArrowDown className="ml-2 h-5 w-5" />
               </Button>
@@ -155,7 +130,9 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="animate-on-scroll text-center" style={{ animationDelay: '0.1s' }}>
+              <div className="animate-on-scroll text-center" style={{
+              animationDelay: '0.1s'
+            }}>
                 <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
                   <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
                     <Clock className="h-10 w-10 text-anaro-charcoal" />
@@ -169,7 +146,9 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="animate-on-scroll text-center" style={{ animationDelay: '0.2s' }}>
+              <div className="animate-on-scroll text-center" style={{
+              animationDelay: '0.2s'
+            }}>
                 <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
                   <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
                     <Mountain className="h-10 w-10 text-anaro-charcoal" />
@@ -213,7 +192,9 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="animate-on-scroll" style={{ animationDelay: '0.1s' }}>
+              <div className="animate-on-scroll" style={{
+              animationDelay: '0.1s'
+            }}>
                 <div className="anaro-card p-8 h-full hover:border-anaro-lime/50">
                   <h3 className="text-xl font-bold text-anaro-lime mb-4">GenAI Expertise</h3>
                   <p className="text-lg text-anaro-text-primary mb-4 font-medium">
@@ -225,7 +206,9 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="animate-on-scroll" style={{ animationDelay: '0.2s' }}>
+              <div className="animate-on-scroll" style={{
+              animationDelay: '0.2s'
+            }}>
                 <div className="anaro-card p-8 h-full hover:border-anaro-lime/50">
                   <h3 className="text-xl font-bold text-anaro-lime mb-4">Proven Method</h3>
                   <p className="text-lg text-anaro-text-primary mb-4 font-medium">
@@ -331,7 +314,9 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="animate-on-scroll" style={{ animationDelay: '0.1s' }}>
+              <div className="animate-on-scroll" style={{
+              animationDelay: '0.1s'
+            }}>
                 <div className="anaro-card p-8 h-full text-center hover:border-anaro-lime/50">
                   <Network className="h-12 w-12 text-anaro-lime mx-auto mb-6" />
                   <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Network Referral</h3>
@@ -344,7 +329,9 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="animate-on-scroll" style={{ animationDelay: '0.2s' }}>
+              <div className="animate-on-scroll" style={{
+              animationDelay: '0.2s'
+            }}>
                 <div className="anaro-card p-8 h-full text-center hover:border-anaro-lime/50">
                   <Target className="h-12 w-12 text-anaro-lime mx-auto mb-6" />
                   <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Qualified Prospects Only</h3>
@@ -378,11 +365,7 @@ const Index = () => {
 
               {/* Main CTA */}
               <div className="mb-12">
-                <Button 
-                  onClick={() => window.open('https://calendly.com', '_blank')} 
-                  className="anaro-button-primary text-xl px-12 py-6 lime-glow hover:scale-[1.02] transform transition-all"
-                  size="lg"
-                >
+                <Button onClick={() => window.open('https://calendly.com', '_blank')} className="anaro-button-primary text-xl px-12 py-6 lime-glow hover:scale-[1.02] transform transition-all" size="lg">
                   <Calendar className="mr-3 h-6 w-6" />
                   Book Your Discovery Call
                 </Button>
@@ -395,39 +378,24 @@ const Index = () => {
                 </h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
-                    <Input
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="h-12 bg-anaro-charcoal-light border-anaro-charcoal-lighter text-anaro-text-primary placeholder:text-anaro-text-muted focus:border-anaro-lime focus:ring-anaro-lime/20"
-                      required
-                    />
-                    <Input
-                      type="email"
-                      placeholder="Email Address"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="h-12 bg-anaro-charcoal-light border-anaro-charcoal-lighter text-anaro-text-primary placeholder:text-anaro-text-muted focus:border-anaro-lime focus:ring-anaro-lime/20"
-                      required
-                    />
+                    <Input placeholder="Your Name" value={formData.name} onChange={e => setFormData({
+                    ...formData,
+                    name: e.target.value
+                  })} className="h-12 bg-anaro-charcoal-light border-anaro-charcoal-lighter text-anaro-text-primary placeholder:text-anaro-text-muted focus:border-anaro-lime focus:ring-anaro-lime/20" required />
+                    <Input type="email" placeholder="Email Address" value={formData.email} onChange={e => setFormData({
+                    ...formData,
+                    email: e.target.value
+                  })} className="h-12 bg-anaro-charcoal-light border-anaro-charcoal-lighter text-anaro-text-primary placeholder:text-anaro-text-muted focus:border-anaro-lime focus:ring-anaro-lime/20" required />
                   </div>
-                  <Input
-                    placeholder="Company"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="h-12 bg-anaro-charcoal-light border-anaro-charcoal-lighter text-anaro-text-primary placeholder:text-anaro-text-muted focus:border-anaro-lime focus:ring-anaro-lime/20"
-                  />
-                  <Textarea
-                    placeholder="Tell me about your team's AI challenges..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="min-h-[120px] bg-anaro-charcoal-light border-anaro-charcoal-lighter text-anaro-text-primary placeholder:text-anaro-text-muted focus:border-anaro-lime focus:ring-anaro-lime/20"
-                    required
-                  />
-                  <Button
-                    type="submit"
-                    className="w-full anaro-button-secondary"
-                  >
+                  <Input placeholder="Company" value={formData.company} onChange={e => setFormData({
+                  ...formData,
+                  company: e.target.value
+                })} className="h-12 bg-anaro-charcoal-light border-anaro-charcoal-lighter text-anaro-text-primary placeholder:text-anaro-text-muted focus:border-anaro-lime focus:ring-anaro-lime/20" />
+                  <Textarea placeholder="Tell me about your team's AI challenges..." value={formData.message} onChange={e => setFormData({
+                  ...formData,
+                  message: e.target.value
+                })} className="min-h-[120px] bg-anaro-charcoal-light border-anaro-charcoal-lighter text-anaro-text-primary placeholder:text-anaro-text-muted focus:border-anaro-lime focus:ring-anaro-lime/20" required />
+                  <Button type="submit" className="w-full anaro-button-secondary">
                     Send Message
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -448,11 +416,7 @@ const Index = () => {
         <div className="container-anaro">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
-              <img 
-                src="/lovable-uploads/26559323-0f01-464c-b33d-cb23837b1598.png" 
-                alt="Roman Siepelmeyer Logo" 
-                className="h-6 w-auto"
-              />
+              <img src="/lovable-uploads/26559323-0f01-464c-b33d-cb23837b1598.png" alt="Roman Siepelmeyer Logo" className="h-6 w-auto" />
             </div>
             <div className="flex space-x-8">
               <a href="#" className="text-anaro-text-muted hover:text-anaro-lime transition-colors">LinkedIn</a>
@@ -464,8 +428,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
