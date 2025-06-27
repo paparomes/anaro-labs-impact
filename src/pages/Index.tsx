@@ -6,6 +6,7 @@ import { useToast } from '@/hooks/use-toast';
 import { ArrowRight, ArrowDown, Puzzle, Clock, Mountain, Video, Users, TrendingUp, CheckCircle, Calendar, Shield, Network, Target } from 'lucide-react';
 import ROICalculator from '@/components/ROICalculator';
 import ProcessTimeline from '@/components/ProcessTimeline';
+
 const Index = () => {
   const {
     toast
@@ -92,8 +93,8 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16 animate-on-scroll">
               <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
-                While your teams hesitate, competitors are{' '}
-                <span className="text-anaro-lime">6 months ahead</span>
+                Address the three main barriers holding{' '}
+                <span className="text-anaro-lime">adoption back</span>
               </h2>
               <div className="anaro-accent-line w-32 mx-auto"></div>
             </div>
@@ -413,4 +414,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
