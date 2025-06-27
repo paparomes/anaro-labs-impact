@@ -104,10 +104,8 @@ const Index = () => {
                   <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
                     <Puzzle className="h-10 w-10 text-anaro-charcoal" />
                   </div>
-                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Generic AI training doesn't fit</h3>
-                  <p className="text-anaro-text-secondary leading-relaxed">
-                    Most AI training is built for developers, not business operations
-                  </p>
+                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Most AI training is not built for purpose</h3>
+                  <p className="text-anaro-text-secondary leading-relaxed">Scientific papers, software development, GenAI gimmicks... Your teams need an unlock, not more noise</p>
                 </div>
               </div>
 
@@ -118,12 +116,8 @@ const Index = () => {
                   <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
                     <Clock className="h-10 w-10 text-anaro-charcoal" />
                   </div>
-                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">
-                    "Learning GenAI isn't their job"
-                  </h3>
-                  <p className="text-anaro-text-secondary leading-relaxed">
-                    Your team needs to focus on FP&A, HR, and customer service - not becoming AI experts
-                  </p>
+                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">GenAI is a tool, not their core function </h3>
+                  <p className="text-anaro-text-secondary leading-relaxed">Help your teams do what they do best - executing on their functional expertise. Invest into a program that enhances their abilities</p>
                 </div>
               </div>
 
@@ -134,12 +128,8 @@ const Index = () => {
                   <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
                     <Mountain className="h-10 w-10 text-anaro-charcoal" />
                   </div>
-                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">
-                    "Pressure without a path"
-                  </h3>
-                  <p className="text-anaro-text-secondary leading-relaxed">
-                    Leadership wants AI adoption, but there's no clear roadmap for business ops teams
-                  </p>
+                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Pressure without a path drives anxiety</h3>
+                  <p className="text-anaro-text-secondary leading-relaxed">Give your teams agency through tangible behaviour change</p>
                 </div>
               </div>
             </div>
@@ -154,7 +144,7 @@ const Index = () => {
             <div className="text-center mb-16 animate-on-scroll">
               <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
                 Your team's expertise +{' '}
-                <span className="text-anaro-lime">My GenAI mastery</span>{' '}
+                <span className="text-anaro-lime">My GenAI guidance</span>{' '}
                 = Measurable results
               </h2>
               <div className="anaro-accent-line w-32 mx-auto"></div>
@@ -163,7 +153,7 @@ const Index = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="animate-on-scroll">
                 <div className="anaro-card p-8 h-full hover:border-anaro-lime/50">
-                  <h3 className="text-xl font-bold text-anaro-lime mb-4">Business Ops Background</h3>
+                  <h3 className="text-xl font-bold text-anaro-lime mb-4">Business ops background</h3>
                   <p className="text-lg text-anaro-text-primary mb-4 font-medium">
                     "I've spent 13 years in operational roles - I understand your team's reality"
                   </p>
