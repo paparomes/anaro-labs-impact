@@ -1,9 +1,26 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { ArrowRight, Target, Search, Handshake, Wrench, CheckCircle, Mail, Users, Star, Award } from 'lucide-react';
+import { 
+  ArrowRight, 
+  ArrowDown, 
+  Puzzle, 
+  Clock, 
+  Mountain, 
+  Video,
+  Users,
+  TrendingUp,
+  CheckCircle,
+  Calendar,
+  Shield,
+  Network,
+  Target
+} from 'lucide-react';
+import ROICalculator from '@/components/ROICalculator';
+import ProcessTimeline from '@/components/ProcessTimeline';
 
 const Index = () => {
   const { toast } = useToast();
@@ -42,8 +59,8 @@ const Index = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Message sent!",
-      description: "I'll get back to you within 24 hours with next steps.",
+      title: "Discovery call request sent!",
+      description: "I'll respond within 24 hours to schedule your consultation.",
     });
     setFormData({ name: '', email: '', company: '', message: '' });
   };
@@ -51,274 +68,334 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-anaro-charcoal text-anaro-text-primary">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-anaro-charcoal/90 backdrop-blur-md border-b border-anaro-charcoal-lighter z-50">
+      <nav className="fixed top-0 w-full bg-anaro-charcoal/95 backdrop-blur-md border-b border-anaro-charcoal-lighter z-50">
         <div className="container-anaro">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/26559323-0f01-464c-b33d-cb23837b1598.png" 
-                alt="Anaro Labs Logo" 
+                alt="Roman Siepelmeyer Logo" 
                 className="h-8 w-auto"
               />
             </div>
-            <div className="hidden md:flex space-x-8">
-              <button 
-                onClick={() => scrollToSection('services')} 
-                className="text-anaro-text-secondary hover:text-anaro-lime transition-colors font-medium"
-              >
-                Services
-              </button>
-              <button 
-                onClick={() => scrollToSection('approach')} 
-                className="text-anaro-text-secondary hover:text-anaro-lime transition-colors font-medium"
-              >
-                Approach
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')} 
-                className="text-anaro-text-secondary hover:text-anaro-lime transition-colors font-medium"
-              >
-                Contact
-              </button>
-            </div>
+            <Button 
+              onClick={() => scrollToSection('conversion')} 
+              className="anaro-button-primary"
+              size="sm"
+            >
+              Book Discovery Call
+            </Button>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden anaro-hero-bg">
-        <div className="container-anaro section-spacing pt-32">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-on-scroll">
-              <h1 className="text-5xl md:text-7xl font-bold text-anaro-text-primary leading-tight mb-6">
-                Drowning in AI{' '}
-                <span className="text-anaro-lime">noise?</span>
+      {/* Section 1: Hook (Above the Fold) */}
+      <section className="relative overflow-hidden anaro-hero-bg pt-24">
+        <div className="container-anaro section-spacing py-20 md:py-32">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center animate-on-scroll">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-anaro-text-primary leading-tight mb-6">
+                Your teams need AI{' '}
+                <span className="text-anaro-lime">fluency</span>,{' '}
+                <br className="hidden md:block" />
+                not AI <span className="text-anaro-lime">fear</span>
               </h1>
               
-              <div className="anaro-accent-line w-24 mb-8"></div>
+              <div className="anaro-accent-line w-32 mx-auto mb-8"></div>
               
-              <h2 className="text-2xl md:text-3xl text-anaro-text-secondary font-medium mb-8 leading-relaxed">
-                Paralyzed by the risk of getting it{' '}
-                <span className="text-anaro-lime font-semibold">wrong?</span>
+              <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium mb-12 max-w-4xl mx-auto leading-relaxed">
+                I help business operations teams (FP&A, HR, Customer Service) turn GenAI anxiety into competitive advantage
               </h2>
-              
-              <div className="space-y-6 mb-12">
-                <p className="text-xl text-anaro-text-secondary leading-relaxed">
-                  You're watching competitors move while you're stuck researching. Small business owners are overwhelmed by endless tools and conflicting advice. Enterprise leaders are paralyzed by brand risk and implementation complexity.
-                </p>
-                <p className="text-2xl font-semibold text-anaro-text-primary">
-                  I help you cut through the chaos and move forward confidently.
-                </p>
-              </div>
 
-              <div className="mb-12">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Award className="h-6 w-6 text-anaro-lime" />
-                  <p className="text-lg text-anaro-lime font-semibold">
-                    13 years scaling operations at Netflix, GetYourGuide, and Delivery Hero
-                  </p>
+              {/* Split-screen visual concept */}
+              <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+                <div className="bg-red-900/20 p-8 rounded-2xl border border-red-500/20">
+                  <Users className="h-12 w-12 text-red-400 mx-auto mb-4" />
+                  <p className="text-red-200 font-medium">Teams overwhelmed by AI tools</p>
                 </div>
-                <p className="text-anaro-text-secondary ml-9">
-                  taught me how to separate AI signal from noise - and implement solutions that actually work.
-                </p>
+                <div className="bg-anaro-lime/10 p-8 rounded-2xl border border-anaro-lime/20">
+                  <TrendingUp className="h-12 w-12 text-anaro-lime mx-auto mb-4" />
+                  <p className="text-anaro-lime font-medium">Teams confidently using AI</p>
+                </div>
               </div>
 
               <Button 
-                onClick={() => scrollToSection('contact')} 
-                className="anaro-button-primary lime-glow"
+                onClick={() => scrollToSection('problem')} 
+                className="anaro-button-secondary text-lg px-8 py-6 lime-glow"
               >
-                Cut Through The Noise
-                <ArrowRight className="ml-2 h-5 w-5" />
+                See how it works
+                <ArrowDown className="ml-2 h-5 w-5" />
               </Button>
             </div>
-            
-            <div className="animate-on-scroll hidden lg:block" style={{ animationDelay: '0.2s' }}>
-              <div className="relative">
-                <div className="w-full h-96 bg-gradient-to-br from-anaro-charcoal-light to-anaro-charcoal-lighter rounded-3xl border border-anaro-lime/20 subtle-float lime-glow"></div>
-                <div className="absolute -top-8 -right-8 w-64 h-64 bg-anaro-lime/10 rounded-full subtle-float" style={{ animationDelay: '2s' }}></div>
-                <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-anaro-lime/5 rounded-2xl subtle-float" style={{ animationDelay: '4s' }}></div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Four Core Services Section */}
-      <section id="services" className="section-spacing anaro-section-bg">
+      {/* Section 2: Problem Agitation */}
+      <section id="problem" className="section-spacing anaro-section-bg">
         <div className="container-anaro">
-          <div className="text-center mb-20 animate-on-scroll">
-            <h2 className="text-4xl md:text-5xl font-bold text-anaro-text-primary mb-6">
-              Four Core Services
-            </h2>
-            <div className="anaro-accent-line w-32 mx-auto mb-6"></div>
-            <p className="text-xl text-anaro-text-secondary max-w-3xl mx-auto">
-              Practical solutions that separate signal from noise
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Service 1 */}
-            <div className="animate-on-scroll">
-              <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
-                <div className="w-16 h-16 bg-anaro-lime rounded-2xl flex items-center justify-center mb-6 group-hover:animate-lime-pulse">
-                  <Target className="h-8 w-8 text-anaro-charcoal" />
-                </div>
-                <h3 className="text-2xl font-bold text-anaro-text-primary mb-4">
-                  🎯 AI Learning & Adoption
-                </h3>
-                <p className="text-lg font-semibold text-anaro-lime mb-4">
-                  Your team is intimidated and progress feels impossible
-                </p>
-                <p className="text-anaro-text-secondary leading-relaxed">
-                  Cut through the overwhelm with practical AI training. No buzzwords, no theoretical frameworks - just actionable skills that work in your actual business environment.
-                </p>
-              </div>
-            </div>
-
-            {/* Service 2 */}
-            <div className="animate-on-scroll" style={{ animationDelay: '0.1s' }}>
-              <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
-                <div className="w-16 h-16 bg-anaro-lime rounded-2xl flex items-center justify-center mb-6 group-hover:animate-lime-pulse">
-                  <Search className="h-8 w-8 text-anaro-charcoal" />
-                </div>
-                <h3 className="text-2xl font-bold text-anaro-text-primary mb-4">
-                  🔍 AI Solution Advisory
-                </h3>
-                <p className="text-lg font-semibold text-anaro-lime mb-4">
-                  Vendor pitches sound the same and the stakes feel too high
-                </p>
-                <p className="text-anaro-text-secondary leading-relaxed">
-                  Navigate AI vendor selection without the expensive mistakes. Structured evaluation frameworks that account for your specific needs and risk tolerance.
-                </p>
-              </div>
-            </div>
-
-            {/* Service 3 */}
-            <div className="animate-on-scroll" style={{ animationDelay: '0.2s' }}>
-              <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
-                <div className="w-16 h-16 bg-anaro-lime rounded-2xl flex items-center justify-center mb-6 group-hover:animate-lime-pulse">
-                  <Handshake className="h-8 w-8 text-anaro-charcoal" />
-                </div>
-                <h3 className="text-2xl font-bold text-anaro-text-primary mb-4">
-                  🤝 AI-Ready BPO Partnerships
-                </h3>
-                <p className="text-lg font-semibold text-anaro-lime mb-4">
-                  Your outsourcing partners don't understand AI integration
-                </p>
-                <p className="text-anaro-text-secondary leading-relaxed">
-                  Bridge the gap between AI strategy and operational execution. 8+ years managing large-scale vendor relationships brings clarity to complex AI-enabled partnerships.
-                </p>
-              </div>
-            </div>
-
-            {/* Service 4 */}
-            <div className="animate-on-scroll" style={{ animationDelay: '0.3s' }}>
-              <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
-                <div className="w-16 h-16 bg-anaro-lime rounded-2xl flex items-center justify-center mb-6 group-hover:animate-lime-pulse">
-                  <Wrench className="h-8 w-8 text-anaro-charcoal" />
-                </div>
-                <h3 className="text-2xl font-bold text-anaro-text-primary mb-4">
-                  🛠️ Custom AI Solutions
-                </h3>
-                <p className="text-lg font-semibold text-anaro-lime mb-4">
-                  Nothing fits your specific business exactly
-                </p>
-                <p className="text-anaro-text-secondary leading-relaxed">
-                  Sometimes you need something built just for you. From customer service automation to content generation tools - practical solutions tailored to your business reality.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why This Approach Works Section */}
-      <section id="approach" className="section-spacing">
-        <div className="container-anaro">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16 animate-on-scroll">
-              <h2 className="text-4xl md:text-5xl font-bold text-anaro-text-primary mb-6">
-                Why This Approach Works
+              <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
+                While your teams hesitate, competitors are{' '}
+                <span className="text-anaro-lime">6 months ahead</span>
               </h2>
-              <div className="anaro-accent-line w-32 mx-auto mb-6"></div>
-              <p className="text-2xl text-anaro-lime font-semibold">
-                "Operations experience meets AI implementation"
-              </p>
+              <div className="anaro-accent-line w-32 mx-auto"></div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="animate-on-scroll text-center">
-                <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="h-10 w-10 text-anaro-charcoal" />
+                <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
+                  <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
+                    <Puzzle className="h-10 w-10 text-anaro-charcoal" />
+                  </div>
+                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">
+                    "Generic AI training doesn't fit"
+                  </h3>
+                  <p className="text-anaro-text-secondary leading-relaxed">
+                    Most AI training is built for developers, not business operations
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Cut through the noise</h3>
-                <p className="text-anaro-text-secondary leading-relaxed">
-                  13 years in operations means I know what actually works versus what just sounds impressive
-                </p>
               </div>
 
               <div className="animate-on-scroll text-center" style={{ animationDelay: '0.1s' }}>
-                <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="h-10 w-10 text-anaro-charcoal" />
+                <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
+                  <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
+                    <Clock className="h-10 w-10 text-anaro-charcoal" />
+                  </div>
+                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">
+                    "Learning GenAI isn't their job"
+                  </h3>
+                  <p className="text-anaro-text-secondary leading-relaxed">
+                    Your team needs to focus on FP&A, HR, and customer service - not becoming AI experts
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Manage the risk</h3>
-                <p className="text-anaro-text-secondary leading-relaxed">
-                  I've been part of major AI implementations and understand how to minimize brand and operational risks
-                </p>
               </div>
 
               <div className="animate-on-scroll text-center" style={{ animationDelay: '0.2s' }}>
-                <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="h-10 w-10 text-anaro-charcoal" />
+                <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
+                  <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
+                    <Mountain className="h-10 w-10 text-anaro-charcoal" />
+                  </div>
+                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">
+                    "Pressure without a path"
+                  </h3>
+                  <p className="text-anaro-text-secondary leading-relaxed">
+                    Leadership wants AI adoption, but there's no clear roadmap for business ops teams
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Full-spectrum support</h3>
-                <p className="text-anaro-text-secondary leading-relaxed">
-                  From overwhelmed small business owner to risk-conscious enterprise leader - guidance that matches where you are
-                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="section-spacing anaro-section-bg">
+      {/* Section 3: Solution Positioning */}
+      <section className="section-spacing">
         <div className="container-anaro">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16 animate-on-scroll">
-              <h2 className="text-4xl md:text-5xl font-bold text-anaro-text-primary mb-6">
-                Ready to move from AI paralysis to progress?
+              <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
+                Your team's expertise +{' '}
+                <span className="text-anaro-lime">My GenAI mastery</span>{' '}
+                = Measurable results
               </h2>
-              <div className="anaro-accent-line w-32 mx-auto mb-6"></div>
-              <p className="text-xl text-anaro-text-secondary max-w-4xl mx-auto">
-                Whether you're drowning in options or worried about implementation risks - let's discuss how to make AI work for your specific situation.
-              </p>
+              <div className="anaro-accent-line w-32 mx-auto"></div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-3 gap-8">
               <div className="animate-on-scroll">
-                <div className="anaro-card p-8">
-                  <h3 className="text-2xl font-bold text-anaro-text-primary mb-6">
-                    Stop drowning in AI noise
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-anaro-lime rounded-full"></div>
-                      <span className="text-anaro-text-secondary">Strategy calls available within 48 hours</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-anaro-lime rounded-full"></div>
-                      <span className="text-anaro-text-secondary">Risk assessment and mitigation planning</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-anaro-lime rounded-full"></div>
-                      <span className="text-anaro-text-secondary">Custom solutions for unique challenges</span>
-                    </div>
-                  </div>
+                <div className="anaro-card p-8 h-full hover:border-anaro-lime/50">
+                  <h3 className="text-xl font-bold text-anaro-lime mb-4">Business Ops Background</h3>
+                  <p className="text-lg text-anaro-text-primary mb-4 font-medium">
+                    "I've spent 13 years in operational roles - I understand your team's reality"
+                  </p>
+                  <p className="text-sm text-anaro-text-muted">
+                    Former operations lead at GetYourGuide, Delivery, Teleperformance
+                  </p>
+                </div>
+              </div>
+
+              <div className="animate-on-scroll" style={{ animationDelay: '0.1s' }}>
+                <div className="anaro-card p-8 h-full hover:border-anaro-lime/50">
+                  <h3 className="text-xl font-bold text-anaro-lime mb-4">GenAI Expertise</h3>
+                  <p className="text-lg text-anaro-text-primary mb-4 font-medium">
+                    "I focus on workflow integration, not generic training"
+                  </p>
+                  <p className="text-sm text-anaro-text-muted">
+                    Specialized in sustainable behavior change for technical adoption
+                  </p>
                 </div>
               </div>
 
               <div className="animate-on-scroll" style={{ animationDelay: '0.2s' }}>
+                <div className="anaro-card p-8 h-full hover:border-anaro-lime/50">
+                  <h3 className="text-xl font-bold text-anaro-lime mb-4">Proven Method</h3>
+                  <p className="text-lg text-anaro-text-primary mb-4 font-medium">
+                    "Workshop-based approach with pre/post measurement"
+                  </p>
+                  <p className="text-sm text-anaro-text-muted">
+                    Because what gets measured gets improved
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Social Proof */}
+      <section className="section-spacing anaro-section-bg">
+        <div className="container-anaro">
+          <div className="max-w-4xl mx-auto text-center animate-on-scroll">
+            <h2 className="text-3xl md:text-4xl font-bold text-anaro-text-primary mb-12">
+              The workshop used and loved by teams at{' '}
+              <span className="text-anaro-lime">Netflix</span>
+            </h2>
+
+            {/* Netflix testimonial */}
+            <div className="bg-anaro-charcoal-light p-8 md:p-12 rounded-3xl border border-anaro-lime/20 mb-12">
+              <div className="text-6xl md:text-8xl text-anaro-lime mb-6 font-bold">Netflix</div>
+              <blockquote className="text-xl md:text-2xl text-anaro-text-primary italic mb-6">
+                "Roman's workshop transformed how our operations team approaches GenAI - from anxiety to everyday advantage"
+              </blockquote>
+            </div>
+
+            {/* Additional company logos */}
+            <div className="mb-8">
+              <p className="text-anaro-text-secondary mb-6">Trusted by operations teams at leading companies</p>
+              <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                <div className="text-2xl font-bold text-anaro-text-muted">GetYourGuide</div>
+                <div className="text-2xl font-bold text-anaro-text-muted">Delivery</div>
+                <div className="text-2xl font-bold text-anaro-text-muted">Teleperformance</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Interactive ROI Calculator */}
+      <section className="section-spacing">
+        <div className="container-anaro">
+          <div className="text-center mb-16 animate-on-scroll">
+            <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
+              Calculate your team's{' '}
+              <span className="text-anaro-lime">productivity opportunity</span>
+            </h2>
+            <div className="anaro-accent-line w-32 mx-auto mb-6"></div>
+            <p className="text-xl text-anaro-text-secondary">
+              See the potential ROI of AI fluency training for your operations team
+            </p>
+          </div>
+
+          <div className="animate-on-scroll">
+            <ROICalculator />
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Process Transparency */}
+      <section className="section-spacing anaro-section-bg">
+        <div className="container-anaro">
+          <div className="text-center mb-16 animate-on-scroll">
+            <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
+              How we transform AI anxiety into{' '}
+              <span className="text-anaro-lime">advantage</span>
+            </h2>
+            <div className="anaro-accent-line w-32 mx-auto"></div>
+          </div>
+
+          <ProcessTimeline />
+        </div>
+      </section>
+
+      {/* Section 7: Risk Reversal */}
+      <section className="section-spacing">
+        <div className="container-anaro">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16 animate-on-scroll">
+              <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
+                No pressure, <span className="text-anaro-lime">mutual evaluation</span>
+              </h2>
+              <div className="anaro-accent-line w-32 mx-auto"></div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="animate-on-scroll">
+                <div className="anaro-card p-8 h-full text-center hover:border-anaro-lime/50">
+                  <Shield className="h-12 w-12 text-anaro-lime mx-auto mb-6" />
+                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Honest Assessment</h3>
+                  <p className="text-anaro-text-secondary mb-4">
+                    "I'll tell you if this isn't right for your team"
+                  </p>
+                  <p className="text-sm text-anaro-text-muted">
+                    Better to know upfront than waste everyone's time
+                  </p>
+                </div>
+              </div>
+
+              <div className="animate-on-scroll" style={{ animationDelay: '0.1s' }}>
+                <div className="anaro-card p-8 h-full text-center hover:border-anaro-lime/50">
+                  <Network className="h-12 w-12 text-anaro-lime mx-auto mb-6" />
+                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Network Referral</h3>
+                  <p className="text-anaro-text-secondary mb-4">
+                    "If I'm not the right fit, I'll connect you with someone who is"
+                  </p>
+                  <p className="text-sm text-anaro-text-muted">
+                    My network includes specialists in every business function
+                  </p>
+                </div>
+              </div>
+
+              <div className="animate-on-scroll" style={{ animationDelay: '0.2s' }}>
+                <div className="anaro-card p-8 h-full text-center hover:border-anaro-lime/50">
+                  <Target className="h-12 w-12 text-anaro-lime mx-auto mb-6" />
+                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Qualified Prospects Only</h3>
+                  <p className="text-anaro-text-secondary mb-4">
+                    "Discovery calls are for teams ready to invest in change"
+                  </p>
+                  <p className="text-sm text-anaro-text-muted">
+                    Investment range: $3,000 - $20,000 (we'll discuss if it fits)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 8: Conversion (Calendly Integration) */}
+      <section id="conversion" className="section-spacing anaro-section-bg">
+        <div className="container-anaro">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="animate-on-scroll">
+              <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
+                Ready to turn AI anxiety into{' '}
+                <span className="text-anaro-lime">advantage?</span>
+              </h2>
+              <div className="anaro-accent-line w-32 mx-auto mb-8"></div>
+              
+              <p className="text-xl md:text-2xl text-anaro-text-secondary mb-12">
+                Book your 30-minute discovery call - no obligation, mutual evaluation
+              </p>
+
+              {/* Main CTA */}
+              <div className="mb-12">
+                <Button 
+                  onClick={() => window.open('https://calendly.com', '_blank')} 
+                  className="anaro-button-primary text-xl px-12 py-6 lime-glow hover:scale-[1.02] transform transition-all"
+                  size="lg"
+                >
+                  <Calendar className="mr-3 h-6 w-6" />
+                  Book Your Discovery Call
+                </Button>
+              </div>
+
+              {/* Contact Form as Alternative */}
+              <div className="anaro-card p-8 max-w-2xl mx-auto">
+                <h3 className="text-xl font-bold text-anaro-text-primary mb-6">
+                  Or send me a message directly
+                </h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <Input
@@ -344,7 +421,7 @@ const Index = () => {
                     className="h-12 bg-anaro-charcoal-light border-anaro-charcoal-lighter text-anaro-text-primary placeholder:text-anaro-text-muted focus:border-anaro-lime focus:ring-anaro-lime/20"
                   />
                   <Textarea
-                    placeholder="Describe your AI challenge or paralysis point..."
+                    placeholder="Tell me about your team's AI challenges..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="min-h-[120px] bg-anaro-charcoal-light border-anaro-charcoal-lighter text-anaro-text-primary placeholder:text-anaro-text-muted focus:border-anaro-lime focus:ring-anaro-lime/20"
@@ -352,13 +429,18 @@ const Index = () => {
                   />
                   <Button
                     type="submit"
-                    className="w-full anaro-button-primary lime-glow"
+                    className="w-full anaro-button-secondary"
                   >
-                    Break Through The Noise
-                    <Mail className="ml-2 h-5 w-5" />
+                    Send Message
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </form>
               </div>
+
+              {/* Final trust signal */}
+              <p className="text-anaro-text-muted mt-8">
+                Join operations leaders from Netflix, GetYourGuide, and other leading companies
+              </p>
             </div>
           </div>
         </div>
@@ -371,7 +453,7 @@ const Index = () => {
             <div className="flex items-center mb-4 md:mb-0">
               <img 
                 src="/lovable-uploads/26559323-0f01-464c-b33d-cb23837b1598.png" 
-                alt="Anaro Labs Logo" 
+                alt="Roman Siepelmeyer Logo" 
                 className="h-6 w-auto"
               />
             </div>
@@ -381,7 +463,7 @@ const Index = () => {
             </div>
           </div>
           <div className="text-center mt-8 pt-8 border-t border-anaro-charcoal-lighter">
-            <p className="text-anaro-text-muted">&copy; 2024 Roman Siepelmeyer. Cutting through AI noise since 2023.</p>
+            <p className="text-anaro-text-muted">&copy; 2024 Roman Siepelmeyer. Transforming AI anxiety into advantage.</p>
           </div>
         </div>
       </footer>
