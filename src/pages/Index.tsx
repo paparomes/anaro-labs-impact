@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -95,10 +94,8 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center animate-on-scroll">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-anaro-text-primary leading-tight mb-6">
-                Your teams need AI{' '}
-                <span className="text-anaro-lime">fluency</span>,{' '}
-                <br className="hidden md:block" />
-                not AI <span className="text-anaro-lime">fear</span>
+                Your team deserves conversational AI{' '}
+                <span className="text-anaro-lime">fluency</span>
               </h1>
               
               <div className="anaro-accent-line w-32 mx-auto mb-8"></div>
