@@ -6,7 +6,6 @@ import { useToast } from '@/hooks/use-toast';
 import { ArrowRight, ArrowDown, Puzzle, Clock, Mountain, Video, Users, TrendingUp, CheckCircle, Calendar, Shield, Network, Target } from 'lucide-react';
 import ROICalculator from '@/components/ROICalculator';
 import ProcessTimeline from '@/components/ProcessTimeline';
-
 const Index = () => {
   const {
     toast
@@ -105,9 +104,7 @@ const Index = () => {
                   <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
                     <Puzzle className="h-10 w-10 text-anaro-charcoal" />
                   </div>
-                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">
-                    "Generic AI training doesn't fit"
-                  </h3>
+                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Generic AI training doesn't fit</h3>
                   <p className="text-anaro-text-secondary leading-relaxed">
                     Most AI training is built for developers, not business operations
                   </p>
@@ -414,5 +411,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
