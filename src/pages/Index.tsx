@@ -131,7 +131,7 @@ const Index = () => {
                       <Clock className="h-10 w-10 text-anaro-charcoal" />
                     </div>
                     <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Learning AI shouldn't be a second job</h3>
-                    <p className="text-anaro-text-secondary leading-relaxed">Your teams are already stretched thin. Between meetings, deadlines, and the constant GenAI information firehose, when do they actually experiment? Let's make AI adoption fit into their reality, not compete with it.</p>
+                    <p className="text-anaro-text-secondary leading-relaxed">Every LinkedIn post, every newsletter, every meeting - someone's talking about AI transformation. The guilt of not keeping up is real. Let's work with their reality, not against it.</p>
                   </div>
                 </div>
 
