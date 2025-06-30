@@ -70,8 +70,12 @@ const Index = () => {
       </nav>
 
       {/* Section 1: Hook (Above the Fold) */}
-      <section className="relative overflow-hidden anaro-hero-bg pt-24">
-        <div className="container-anaro section-spacing py-20 md:py-32">
+      <section className="relative overflow-hidden pt-24">
+        {/* Hero background with integrated gradient to next section */}
+        <div className="anaro-hero-bg absolute inset-0"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-anaro-charcoal-light/30"></div>
+        
+        <div className="relative z-10 container-anaro section-spacing py-20 md:py-32">
           <div className="max-w-6xl mx-auto">
             <div className="text-center animate-on-scroll">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-anaro-text-primary leading-tight mb-6">
@@ -83,34 +87,25 @@ const Index = () => {
               
               <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium mb-12 max-w-4xl mx-auto leading-relaxed">I help business operations teams get the very best out of GenAI</h2>
 
-              {/* Photo with controlled gradient fade */}
+              {/* Photo with integrated gradient overlay */}
               <div className="relative max-w-md mx-auto">
-                <div className="relative overflow-hidden rounded-2xl">
-                  {/* Photo container with gradient mask */}
-                  <div className="relative h-96">
-                    <img 
-                      src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
-                      alt="Roman Siepelmeyer" 
-                      className="w-full h-full object-cover object-top"
-                    />
-                    {/* Multi-stop gradient for precise control: clear top 50%, gradual fade bottom 50% */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent 0% from-transparent 50% via-anaro-charcoal/30 70% to-anaro-charcoal 100% pointer-events-none rounded-2xl"></div>
-                  </div>
+                <div className="relative">
+                  <img 
+                    src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
+                    alt="Roman Siepelmeyer" 
+                    className="w-full h-auto rounded-2xl"
+                  />
+                  {/* Seamless gradient that blends with background flow */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent 0% from-transparent 40% via-anaro-charcoal/20 60% via-anaro-charcoal/60 80% to-anaro-charcoal-light/80 100% rounded-2xl pointer-events-none"></div>
                 </div>
-                
-                {/* Transition bridge to next section */}
-                <div className="h-24 bg-gradient-to-b from-anaro-charcoal via-anaro-charcoal/80 to-transparent"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Problem Agitation - with gradient entry */}
+      {/* Section 2: Problem Agitation - seamless connection */}
       <section id="problem" className="section-spacing">
-        {/* Gradient transition from photo */}
-        <div className="h-16 bg-gradient-to-b from-transparent to-anaro-charcoal-light/30"></div>
-        
         <div className="anaro-section-bg">
           <div className="container-anaro">
             <div className="max-w-6xl mx-auto">
