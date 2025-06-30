@@ -130,7 +130,7 @@ const Index = () => {
                     <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
                       <Clock className="h-10 w-10 text-anaro-charcoal" />
                     </div>
-                    <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Learning AI shouldn't be a second job</h3>
+                    <h3 className="text-xl font-bold text-anaro-text-primary mb-4">The AI FOMO is exhausting</h3>
                     <p className="text-anaro-text-secondary leading-relaxed">Every LinkedIn post, every newsletter, every meeting - someone's talking about AI transformation. The guilt of not keeping up is real. Let's work with their reality, not against it.</p>
                   </div>
                 </div>
