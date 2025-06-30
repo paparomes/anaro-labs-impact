@@ -83,66 +83,78 @@ const Index = () => {
               
               <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium mb-12 max-w-4xl mx-auto leading-relaxed">I help business operations teams get the very best out of GenAI</h2>
 
-              {/* Photo with gradient fade */}
-              <div className="relative max-w-md mx-auto mb-12">
-                <div className="relative">
-                  <img 
-                    src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
-                    alt="Roman Siepelmeyer" 
-                    className="w-full h-auto rounded-2xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-anaro-charcoal via-transparent to-transparent rounded-2xl pointer-events-none"></div>
+              {/* Photo with controlled gradient fade */}
+              <div className="relative max-w-md mx-auto">
+                <div className="relative overflow-hidden rounded-2xl">
+                  {/* Photo container with gradient mask */}
+                  <div className="relative h-96">
+                    <img 
+                      src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
+                      alt="Roman Siepelmeyer" 
+                      className="w-full h-full object-cover object-top"
+                    />
+                    {/* Multi-stop gradient for precise control: clear top 50%, gradual fade bottom 50% */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent 0% from-transparent 50% via-anaro-charcoal/30 70% to-anaro-charcoal 100% pointer-events-none rounded-2xl"></div>
+                  </div>
                 </div>
+                
+                {/* Transition bridge to next section */}
+                <div className="h-24 bg-gradient-to-b from-anaro-charcoal via-anaro-charcoal/80 to-transparent"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Problem Agitation */}
-      <section id="problem" className="section-spacing anaro-section-bg">
-        <div className="container-anaro">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16 animate-on-scroll">
-              <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
-                Address the three main barriers holding{' '}
-                <span className="text-anaro-lime">adoption back</span>
-              </h2>
-              <div className="anaro-accent-line w-32 mx-auto"></div>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="animate-on-scroll text-center">
-                <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
-                  <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
-                    <Puzzle className="h-10 w-10 text-anaro-charcoal" />
-                  </div>
-                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Most AI training is not built for purpose</h3>
-                  <p className="text-anaro-text-secondary leading-relaxed">Scientific papers, software development, GenAI gimmicks... Your teams need an unlock, not more noise</p>
-                </div>
+      {/* Section 2: Problem Agitation - with gradient entry */}
+      <section id="problem" className="section-spacing">
+        {/* Gradient transition from photo */}
+        <div className="h-16 bg-gradient-to-b from-transparent to-anaro-charcoal-light/30"></div>
+        
+        <div className="anaro-section-bg">
+          <div className="container-anaro">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16 animate-on-scroll">
+                <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
+                  Address the three main barriers holding{' '}
+                  <span className="text-anaro-lime">adoption back</span>
+                </h2>
+                <div className="anaro-accent-line w-32 mx-auto"></div>
               </div>
 
-              <div className="animate-on-scroll text-center" style={{
-              animationDelay: '0.1s'
-            }}>
-                <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
-                  <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
-                    <Clock className="h-10 w-10 text-anaro-charcoal" />
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="animate-on-scroll text-center">
+                  <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
+                    <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
+                      <Puzzle className="h-10 w-10 text-anaro-charcoal" />
+                    </div>
+                    <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Most AI training is not built for purpose</h3>
+                    <p className="text-anaro-text-secondary leading-relaxed">Scientific papers, software development, GenAI gimmicks... Your teams need an unlock, not more noise</p>
                   </div>
-                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">GenAI is a tool, not their core function </h3>
-                  <p className="text-anaro-text-secondary leading-relaxed">Help your teams do what they do best - executing on their functional expertise. Invest into a program that enhances their abilities</p>
                 </div>
-              </div>
 
-              <div className="animate-on-scroll text-center" style={{
-              animationDelay: '0.2s'
-            }}>
-                <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
-                  <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
-                    <Mountain className="h-10 w-10 text-anaro-charcoal" />
+                <div className="animate-on-scroll text-center" style={{
+                animationDelay: '0.1s'
+              }}>
+                  <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
+                    <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
+                      <Clock className="h-10 w-10 text-anaro-charcoal" />
+                    </div>
+                    <h3 className="text-xl font-bold text-anaro-text-primary mb-4">GenAI is a tool, not their core function </h3>
+                    <p className="text-anaro-text-secondary leading-relaxed">Help your teams do what they do best - executing on their functional expertise. Invest into a program that enhances their abilities</p>
                   </div>
-                  <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Pressure without a path drives anxiety</h3>
-                  <p className="text-anaro-text-secondary leading-relaxed">Give your teams agency through tangible behaviour change</p>
+                </div>
+
+                <div className="animate-on-scroll text-center" style={{
+                animationDelay: '0.2s'
+              }}>
+                  <div className="anaro-card p-8 h-full hover:border-anaro-lime/50 group">
+                    <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
+                      <Mountain className="h-10 w-10 text-anaro-charcoal" />
+                    </div>
+                    <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Pressure without a path drives anxiety</h3>
+                    <p className="text-anaro-text-secondary leading-relaxed">Give your teams agency through tangible behaviour change</p>
+                  </div>
                 </div>
               </div>
             </div>
