@@ -111,8 +111,9 @@ const Index = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 animate-on-scroll">
                 <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
-                  Address the three main barriers holding{' '}
-                  <span className="text-anaro-lime">adoption back</span>
+                  Most teams know {' '}
+                  <span className="text-anaro-lime">AI matters</span>.
+                  Bridge the gap between your power users and everyone else.
                 </h2>
                 <div className="anaro-accent-line w-32 mx-auto"></div>
               </div>
