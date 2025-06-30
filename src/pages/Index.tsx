@@ -83,18 +83,15 @@ const Index = () => {
               
               <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium mb-12 max-w-4xl mx-auto leading-relaxed">I help business operations teams get the very best out of GenAI</h2>
 
-              {/* Photo with improved gradient fade */}
+              {/* Photo with gradient fade */}
               <div className="relative max-w-md mx-auto mb-12">
-                <div className="relative overflow-hidden rounded-2xl">
+                <div className="relative">
                   <img 
-                    src="/lovable-uploads/1b418b76-91e7-4845-a58c-b13cb3660a34.png" 
+                    src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
                     alt="Roman Siepelmeyer" 
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto rounded-2xl"
                   />
-                  {/* Multi-layer gradient for smoother fade */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-anaro-charcoal via-anaro-charcoal/80 to-transparent rounded-2xl pointer-events-none"></div>
-                  <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-anaro-charcoal via-anaro-charcoal/60 to-transparent pointer-events-none"></div>
-                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-anaro-charcoal to-transparent pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-anaro-charcoal via-transparent to-transparent rounded-2xl pointer-events-none"></div>
                 </div>
               </div>
             </div>
