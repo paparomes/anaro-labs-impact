@@ -86,8 +86,8 @@ const Index = () => {
             
             <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium max-w-4xl mx-auto leading-relaxed">I help business operations teams get the very best out of GenAI</h2>
 
-            {/* Photo with natural fade using CSS mask */}
-            <div className="relative max-w-md mx-auto mt-12">
+            {/* Photo with natural fade using CSS mask - increased size by 1.35x */}
+            <div className="relative mx-auto mt-12" style={{ maxWidth: '27rem' }}>
               <img 
                 src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
                 alt="Roman Siepelmeyer" 
