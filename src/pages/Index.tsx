@@ -89,7 +89,7 @@ const Index = () => {
             {/* Photo with natural fade using CSS mask - responsive padding */}
             <div className="relative w-full md:px-[10%]">
               <div className="w-full flex justify-center">
-                <img src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" alt="Roman Siepelmeyer" className="w-full h-auto object-cover" style={{
+                <img src="/lovable-uploads/163078a8-b279-4ada-ba74-f1efa161ebdc.png" alt="Roman Siepelmeyer" className="w-full h-auto object-cover" style={{
                 maskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)',
                 WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)'
               }} />
@@ -417,4 +417,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
