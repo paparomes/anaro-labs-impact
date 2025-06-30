@@ -107,7 +107,7 @@ const Index = () => {
       {/* Section 2: Problem Agitation */}
       <section id="problem" className="section-spacing">
         <div className="anaro-section-bg">
-          <div className="container-anaro">
+          <div className="container-anaro py-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16 animate-on-scroll">
                 <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
