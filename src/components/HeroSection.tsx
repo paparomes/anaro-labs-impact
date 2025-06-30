@@ -9,20 +9,20 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 md:px-6 max-w-6xl mx-auto">
-        <div className="space-y-4 animate-on-scroll py-4 md:py-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-anaro-text-primary leading-tight cinematic-text">
+        <div className="animate-on-scroll py-4 md:py-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-anaro-text-primary leading-tight cinematic-text mb-4">
             AI training tailored to {' '}
             <span className="text-anaro-lime">your needs</span>
           </h1>
           
-          <div className="anaro-accent-line w-32 mx-auto"></div>
+          <div className="anaro-accent-line w-32 mx-auto mb-4"></div>
           
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium max-w-4xl mx-auto leading-relaxed">
+          <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium max-w-4xl mx-auto leading-relaxed mb-4">
             I help business operations teams get the very best out of GenAI
           </h2>
 
-          {/* Photo with natural fade using CSS mask - optimized spacing */}
-          <div className="relative w-full">
+          {/* Photo with natural fade using CSS mask - no bottom margin */}
+          <div className="relative w-full mb-0">
             <div className="w-full flex justify-center">
               <img 
                 src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
