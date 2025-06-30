@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -86,12 +87,12 @@ const Index = () => {
             
             <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium max-w-4xl mx-auto leading-relaxed">I help business operations teams get the very best out of GenAI</h2>
 
-            {/* Photo with natural fade using CSS mask - increased size by 1.35x */}
-            <div className="relative mx-auto mt-12" style={{ maxWidth: '27rem' }}>
+            {/* Photo with natural fade using CSS mask - full width edge to edge */}
+            <div className="relative w-full mt-12 -mx-6 md:-mx-8">
               <img 
                 src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
                 alt="Roman Siepelmeyer" 
-                className="w-full h-auto rounded-2xl"
+                className="w-full h-auto object-cover"
                 style={{
                   maskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)'
