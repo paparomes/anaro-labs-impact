@@ -70,41 +70,39 @@ const Index = () => {
       </nav>
 
       {/* Section 1: Hook (Above the Fold) */}
-      <section className="relative overflow-hidden pt-24">
-        {/* Hero background with integrated gradient to next section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+        {/* Background */}
         <div className="anaro-hero-bg absolute inset-0"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-anaro-charcoal-light/30"></div>
         
-        <div className="relative z-10 container-anaro section-spacing py-20 md:py-32">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center animate-on-scroll">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-anaro-text-primary leading-tight mb-6">
-                AI training tailored to {' '}
-                <span className="text-anaro-lime">your needs</span>
-              </h1>
-              
-              <div className="anaro-accent-line w-32 mx-auto mb-8"></div>
-              
-              <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium mb-12 max-w-4xl mx-auto leading-relaxed">I help business operations teams get the very best out of GenAI</h2>
+        {/* Content */}
+        <div className="relative z-10 text-center px-6 md:px-8 max-w-6xl mx-auto">
+          <div className="space-y-8 animate-on-scroll">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-anaro-text-primary leading-tight cinematic-text">
+              AI training tailored to {' '}
+              <span className="text-anaro-lime">your needs</span>
+            </h1>
+            
+            <div className="anaro-accent-line w-32 mx-auto"></div>
+            
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium max-w-4xl mx-auto leading-relaxed">I help business operations teams get the very best out of GenAI</h2>
 
-              {/* Photo with integrated gradient overlay */}
-              <div className="relative max-w-md mx-auto">
-                <div className="relative">
-                  <img 
-                    src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
-                    alt="Roman Siepelmeyer" 
-                    className="w-full h-auto rounded-2xl"
-                  />
-                  {/* Seamless gradient that blends with background flow */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent 0% from-transparent 40% via-anaro-charcoal/20 60% via-anaro-charcoal/60 80% to-anaro-charcoal-light/80 100% rounded-2xl pointer-events-none"></div>
-                </div>
-              </div>
+            {/* Photo with natural fade using CSS mask */}
+            <div className="relative max-w-md mx-auto mt-12">
+              <img 
+                src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
+                alt="Roman Siepelmeyer" 
+                className="w-full h-auto rounded-2xl"
+                style={{
+                  maskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)'
+                }}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Problem Agitation - seamless connection */}
+      {/* Section 2: Problem Agitation */}
       <section id="problem" className="section-spacing">
         <div className="anaro-section-bg">
           <div className="container-anaro">
