@@ -74,8 +74,8 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center animate-on-scroll">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-anaro-text-primary leading-tight mb-6">
-                Your team deserves conversational AI{' '}
-                <span className="text-anaro-lime">fluency</span>
+                AI training tailored to {' '}
+                <span className="text-anaro-lime">your needs</span>
               </h1>
               
               <div className="anaro-accent-line w-32 mx-auto mb-8"></div>
