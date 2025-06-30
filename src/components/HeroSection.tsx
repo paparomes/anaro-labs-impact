@@ -3,13 +3,13 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background */}
       <div className="anaro-hero-bg absolute inset-0"></div>
       
       {/* Content */}
       <div className="relative z-10 text-center px-6 md:px-8 max-w-6xl mx-auto">
-        <div className="space-y-8 animate-on-scroll">
+        <div className="space-y-8 animate-on-scroll py-8 md:py-16">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-anaro-text-primary leading-tight cinematic-text">
             AI training tailored to {' '}
             <span className="text-anaro-lime">your needs</span>
@@ -25,7 +25,7 @@ const HeroSection = () => {
           <div className="relative w-full md:px-[10%]">
             <div className="w-full flex justify-center">
               <img 
-                src="/lovable-uploads/163078a8-b279-4ada-ba74-f1efa161ebdc.png" 
+                src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
                 alt="Roman Siepelmeyer" 
                 className="w-full h-auto object-cover" 
                 style={{
