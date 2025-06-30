@@ -29,9 +29,8 @@ const SolutionSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-on-scroll">
             <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
-              Your team's expertise +{' '}
-              <span className="text-anaro-lime">My GenAI guidance</span>{' '}
-              = Measurable results
+              Turn your highest performers into {' '}
+              <span className="text-anaro-lime">force multipliers</span>{' '}
             </h2>
             <div className="anaro-accent-line w-32 mx-auto"></div>
           </div>
