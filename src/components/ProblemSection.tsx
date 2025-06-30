@@ -12,7 +12,7 @@ const ProblemSection = () => {
     },
     {
       icon: Clock,
-      title: "The AI FOMO is exhausting",
+      title: "AI FOMO is exhausting",
       description: "Every LinkedIn post, every newsletter, every meeting - someone's talking about AI transformation. The guilt of not keeping up is real. Let's work with their reality, not against it.",
       delay: '0.1s'
     },
