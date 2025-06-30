@@ -4,7 +4,6 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ProblemSection from '@/components/ProblemSection';
 import SolutionSection from '@/components/SolutionSection';
-import SocialProofSection from '@/components/SocialProofSection';
 import RiskReversalSection from '@/components/RiskReversalSection';
 import ConversionSection from '@/components/ConversionSection';
 import Footer from '@/components/Footer';
@@ -50,8 +49,6 @@ const Index = () => {
       <ProblemSection />
       
       <SolutionSection />
-      
-      <SocialProofSection />
       
       {/* Section 5: Interactive ROI Calculator */}
       <section className="section-spacing">
