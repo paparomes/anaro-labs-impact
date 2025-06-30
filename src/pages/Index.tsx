@@ -6,7 +6,6 @@ import { useToast } from '@/hooks/use-toast';
 import { ArrowRight, ArrowDown, Puzzle, Clock, Mountain, Video, Users, TrendingUp, CheckCircle, Calendar, Shield, Network, Target } from 'lucide-react';
 import ROICalculator from '@/components/ROICalculator';
 import ProcessTimeline from '@/components/ProcessTimeline';
-
 const Index = () => {
   const {
     toast
@@ -89,15 +88,10 @@ const Index = () => {
             {/* Photo with natural fade using CSS mask - responsive padding */}
             <div className="relative w-full mt-12 md:px-[10%]">
               <div className="w-full flex justify-center">
-                <img 
-                  src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
-                  alt="Roman Siepelmeyer" 
-                  className="w-full h-auto object-cover"
-                  style={{
-                    maskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)'
-                  }}
-                />
+                <img src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" alt="Roman Siepelmeyer" className="w-full h-auto object-cover" style={{
+                maskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)'
+              }} />
               </div>
             </div>
           </div>
@@ -124,7 +118,7 @@ const Index = () => {
                     <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
                       <Puzzle className="h-10 w-10 text-anaro-charcoal" />
                     </div>
-                    <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Most AI training is not built for purpose</h3>
+                    <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Generic AI training misses the mark</h3>
                     <p className="text-anaro-text-secondary leading-relaxed">Scientific papers, software development, GenAI gimmicks... Your teams need an unlock, not more noise</p>
                   </div>
                 </div>
@@ -422,5 +416,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
