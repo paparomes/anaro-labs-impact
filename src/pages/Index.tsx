@@ -130,7 +130,7 @@ const Index = () => {
                     <div className="w-20 h-20 bg-anaro-lime rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-lime-pulse">
                       <Clock className="h-10 w-10 text-anaro-charcoal" />
                     </div>
-                    <h3 className="text-xl font-bold text-anaro-text-primary mb-4">GenAI is a tool, not their core function </h3>
+                    <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Learning AI shouldn't be a second job</h3>
                     <p className="text-anaro-text-secondary leading-relaxed">Help your teams do what they do best - executing on their functional expertise. Invest into a program that enhances their abilities</p>
                   </div>
                 </div>
