@@ -143,7 +143,7 @@ const Index = () => {
                       <Mountain className="h-10 w-10 text-anaro-charcoal" />
                     </div>
                     <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Pressure without a path drives anxiety</h3>
-                    <p className="text-anaro-text-secondary leading-relaxed">Give your teams agency through tangible behaviour change</p>
+                    <p className="text-anaro-text-secondary leading-relaxed">Leadership wants AI adoption. Social feeds scream 'adapt or fall behind.' Meanwhile, your teams are quietly using personal ChatGPT accounts because it's easier than navigating corporate tools. Let's clear the fog and create a real path forward.</p>
                   </div>
                 </div>
               </div>
