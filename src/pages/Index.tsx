@@ -119,7 +119,7 @@ const Index = () => {
                       <Puzzle className="h-10 w-10 text-anaro-charcoal" />
                     </div>
                     <h3 className="text-xl font-bold text-anaro-text-primary mb-4">The knowing-doing gap is real</h3>
-                    <p className="text-anaro-text-secondary leading-relaxed">Your teams don't need another ChatGPT tutorial or academic paper. They need a structured path to discover AI applications within their actual workflows - not more noise, but an unlock.</p>
+                    <p className="text-anaro-text-secondary leading-relaxed">Your teams intellectually understand AI's importance. They've read the articles, watched the demos. But translating that into Monday morning workflows? That's where they get stuck. Knowledge without application creates frustration, not transformation.</p>
                   </div>
                 </div>
 
