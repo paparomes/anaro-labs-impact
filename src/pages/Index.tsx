@@ -119,7 +119,7 @@ const Index = () => {
                       <Puzzle className="h-10 w-10 text-anaro-charcoal" />
                     </div>
                     <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Generic AI training misses the mark</h3>
-                    <p className="text-anaro-text-secondary leading-relaxed">Scientific papers, software development, GenAI gimmicks... Your teams need an unlock, not more noise</p>
+                    <p className="text-anaro-text-secondary leading-relaxed">Your teams don't need another ChatGPT tutorial or academic paper. They need a structured path to discover AI applications within their actual workflows - not more noise, but an unlock.</p>
                   </div>
                 </div>
 
