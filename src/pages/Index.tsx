@@ -107,7 +107,7 @@ const Index = () => {
                 <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
                   Most teams know {' '}
                   <span className="text-anaro-lime">AI matters</span>.
-                  Bridge the gap between your power users and everyone else.
+                  Here's what's actually holding them back.
                 </h2>
                 <div className="anaro-accent-line w-32 mx-auto"></div>
               </div>
