@@ -131,7 +131,7 @@ const Index = () => {
                       <Clock className="h-10 w-10 text-anaro-charcoal" />
                     </div>
                     <h3 className="text-xl font-bold text-anaro-text-primary mb-4">Learning AI shouldn't be a second job</h3>
-                    <p className="text-anaro-text-secondary leading-relaxed">Help your teams do what they do best - executing on their functional expertise. Invest into a program that enhances their abilities</p>
+                    <p className="text-anaro-text-secondary leading-relaxed">Your teams are already stretched thin. Between meetings, deadlines, and the constant GenAI information firehose, when do they actually experiment? Let's make AI adoption fit into their reality, not compete with it.</p>
                   </div>
                 </div>
 
