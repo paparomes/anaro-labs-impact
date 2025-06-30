@@ -6,6 +6,7 @@ import { useToast } from '@/hooks/use-toast';
 import { ArrowRight, ArrowDown, Puzzle, Clock, Mountain, Video, Users, TrendingUp, CheckCircle, Calendar, Shield, Network, Target } from 'lucide-react';
 import ROICalculator from '@/components/ROICalculator';
 import ProcessTimeline from '@/components/ProcessTimeline';
+
 const Index = () => {
   const {
     toast
@@ -81,6 +82,18 @@ const Index = () => {
               <div className="anaro-accent-line w-32 mx-auto mb-8"></div>
               
               <h2 className="text-xl md:text-2xl lg:text-3xl text-anaro-text-secondary font-medium mb-12 max-w-4xl mx-auto leading-relaxed">I help business operations teams get the very best out of GenAI</h2>
+
+              {/* Photo with gradient fade */}
+              <div className="relative max-w-md mx-auto mb-12">
+                <div className="relative">
+                  <img 
+                    src="/lovable-uploads/a1b486e7-9dd3-4277-800c-8d99c2949985.png" 
+                    alt="Roman Siepelmeyer" 
+                    className="w-full h-auto rounded-2xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-anaro-charcoal via-transparent to-transparent rounded-2xl pointer-events-none"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -401,4 +414,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
