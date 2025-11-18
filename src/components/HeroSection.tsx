@@ -1,6 +1,7 @@
 
 import React from 'react';
 
+// Copy reference: copy/website/hero-v1.md
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
