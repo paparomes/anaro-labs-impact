@@ -1,31 +1,44 @@
 
 import React from 'react';
 
+// Copy reference: copy/website/social-proof-v1.md
 const SocialProofSection = () => {
   return (
     <section className="section-spacing anaro-section-bg">
       <div className="container-anaro">
-        <div className="max-w-4xl mx-auto text-center animate-on-scroll">
-          <h2 className="text-3xl md:text-4xl font-bold text-anaro-text-primary mb-12">
-            The workshop used and loved by teams at{' '}
-            <span className="text-anaro-lime">Netflix</span>
+        <div className="max-w-4xl mx-auto text-center animate-on-scroll mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-anaro-text-primary mb-4">
+            What leaders say
           </h2>
+          <div className="anaro-accent-line w-32 mx-auto"></div>
+        </div>
 
-          {/* Netflix testimonial */}
-          <div className="bg-anaro-charcoal-light p-8 md:p-12 rounded-3xl border border-anaro-lime/20 mb-12">
-            <div className="text-6xl md:text-8xl text-anaro-lime mb-6 font-bold">Netflix</div>
-            <blockquote className="text-xl md:text-2xl text-anaro-text-primary italic mb-6">
-              "Roman's workshop transformed how our operations team approaches GenAI - from anxiety to everyday advantage"
-            </blockquote>
-          </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="anaro-card p-8 md:p-10 flex flex-col md:flex-row items-stretch gap-8 md:gap-10">
+            {/* Portrait + meta */}
+            <div className="md:w-2/5 flex flex-col items-center md:items-start text-center md:text-left">
+              <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden mb-4 bg-anaro-charcoal-lighter">
+                <img
+                  src="/dekyi-portrait.jpg"
+                  alt="Customer portrait"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className="text-lg font-semibold text-anaro-text-primary">Dekyi Borsma</p>
+              <p className="text-sm text-anaro-text-secondary">Director of Customer Service EMEA</p>
+              <p className="text-sm text-anaro-text-muted mt-1">Netflix</p>
+            </div>
 
-          {/* Additional company logos */}
-          <div className="mb-8">
-            <p className="text-anaro-text-secondary mb-6">Trusted by operations teams at leading companies</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              <div className="text-2xl font-bold text-anaro-text-muted">GetYourGuide</div>
-              <div className="text-2xl font-bold text-anaro-text-muted">Delivery</div>
-              <div className="text-2xl font-bold text-anaro-text-muted">Teleperformance</div>
+            {/* Quote */}
+            <div className="md:w-3/5 flex items-center">
+              <blockquote className="text-lg md:text-xl text-anaro-text-primary italic leading-relaxed">
+                "He was pivotal in helping our cross functional team in EMEA on the road towards
+                understanding the fundamentals of AI and highlighting the broad and various
+                opportunities we have to very tactically incorporate AI in our workstreams to
+                optimize our output in a variety of ways — going beyond just automation and leaning
+                into creative ways to empower our teams and strengthen our impact. Can't recommend
+                him highly enough."
+              </blockquote>
             </div>
           </div>
         </div>
