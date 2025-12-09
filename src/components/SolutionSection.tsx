@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Compass, Users, UserCheck, LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -13,7 +13,35 @@ interface Solution {
 
 const SolutionSection = () => {
   const [activeId, setActiveId] = useState(0);
+  const [isSticky, setIsSticky] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const stickyTriggerRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current || !stickyTriggerRef.current) return;
+      
+      const sectionRect = sectionRef.current.getBoundingClientRect();
+      const triggerRect = stickyTriggerRef.current.getBoundingClientRect();
+      
+      const isMobile = window.innerWidth < 768;
+      
+      if (isMobile) {
+        const shouldBeSticky = triggerRect.top <= 57 && sectionRect.bottom > 150;
+        setIsSticky(shouldBeSticky);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
   const solutions: Solution[] = [
     {
       id: 0,
@@ -99,7 +127,7 @@ const SolutionSection = () => {
   const activeSolution = solutions.find(s => s.id === activeId) || solutions[0];
 
   return (
-    <section id="solutions" className="section-spacing bg-anaro-charcoal-light/30">
+    <section id="solutions" ref={sectionRef} className="section-spacing bg-anaro-charcoal-light/30">
       <div className="container-anaro">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -114,9 +142,15 @@ const SolutionSection = () => {
             <div className="anaro-accent-line w-32 mx-auto"></div>
           </div>
 
-          {/* Icon Selector Row - Compact circular style like ProblemSection */}
+          {/* Sticky trigger point */}
+          <div ref={stickyTriggerRef} className="h-0" />
+
+          {/* Icon Selector Row - Sticky on mobile */}
           <div 
-            className="flex justify-center gap-6 md:gap-12 mb-8 py-4"
+            className={cn(
+              "flex justify-center gap-6 md:gap-12 mb-4 md:mb-8 py-2 md:py-4 transition-all duration-300 z-30",
+              isSticky && "fixed top-[57px] left-0 right-0 bg-anaro-charcoal/95 backdrop-blur-sm border-b border-anaro-charcoal-lighter shadow-lg"
+            )}
             role="tablist"
             aria-label="Solution approaches"
           >
@@ -165,8 +199,11 @@ const SolutionSection = () => {
             })}
           </div>
 
+          {/* Spacer when sticky is active */}
+          {isSticky && <div className="h-28 md:h-0" />}
+
           {/* Content Panel */}
-          <div 
+          <div
             key={activeId}
             className="anaro-card p-8 md:p-12 max-w-4xl mx-auto animate-fade-in"
           >
