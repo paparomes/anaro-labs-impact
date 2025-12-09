@@ -85,12 +85,12 @@ const ProblemSection = () => {
   }, []);
 
   return (
-    <section id="problem" ref={sectionRef} className="section-spacing py-16">
+    <section id="problem" ref={sectionRef} className="section-spacing py-8 md:py-16">
       <div className="anaro-section-bg">
-        <div className="container-anaro py-16">
+        <div className="container-anaro py-8 md:py-16">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-12 animate-on-scroll">
+            <div className="text-center mb-6 md:mb-12 animate-on-scroll">
               <span className="text-anaro-lime text-sm font-semibold tracking-widest uppercase mb-4 block">
                 😓 The pain points
               </span>
@@ -111,7 +111,7 @@ const ProblemSection = () => {
             {/* Icon Selector Row - Sticky on mobile */}
             <div 
               className={cn(
-                "flex justify-center gap-6 md:gap-12 mb-8 py-4 transition-all duration-300 z-30",
+                "flex justify-center gap-6 md:gap-12 mb-4 md:mb-8 py-2 md:py-4 transition-all duration-300 z-30",
                 isSticky && "fixed top-0 left-0 right-0 bg-anaro-charcoal/95 backdrop-blur-sm border-b border-anaro-charcoal-lighter shadow-lg"
               )}
               role="tablist"
