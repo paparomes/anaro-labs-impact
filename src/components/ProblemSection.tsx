@@ -168,7 +168,7 @@ const ProblemSection = () => {
             {/* Spacer when sticky is active */}
             {isSticky && <div className="h-28 md:h-0" />}
 
-            {/* Content Panel */}
+            {/* Content Panel - Apple-inspired typography */}
             <div
               id="problem-content-panel"
               role="tabpanel"
@@ -177,19 +177,42 @@ const ProblemSection = () => {
             >
               <div 
                 key={activeId}
-                className="anaro-card p-8 md:p-10 max-w-4xl mx-auto animate-fade-in"
+                className="anaro-card p-8 md:p-12 max-w-4xl mx-auto animate-fade-in"
               >
-                <h3 className="text-xl md:text-2xl font-bold text-anaro-text-primary mb-6 text-center">
+                <h3 className="text-xl md:text-2xl font-semibold text-white mb-8 text-center tracking-tight">
                   {activeProblem.title}
                 </h3>
-                {/* Improved legibility: larger text, better line-height, higher contrast */}
-                <ul className="space-y-5">
+                {/* 
+                  Apple-inspired legibility:
+                  - Pure white text for maximum contrast (WCAG AAA)
+                  - Generous line-height (1.7) for comfortable reading
+                  - Slight letter-spacing for improved tracking
+                  - Larger font size (17px+ base)
+                  - Ample vertical spacing between items
+                  - Font smoothing via CSS
+                */}
+                <ul 
+                  className="space-y-6"
+                  style={{
+                    WebkitFontSmoothing: 'antialiased',
+                    MozOsxFontSmoothing: 'grayscale',
+                    textRendering: 'optimizeLegibility'
+                  }}
+                >
                   {activeProblem.points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex gap-4">
-                      <span className="text-anaro-lime mt-1 flex-shrink-0 text-lg">•</span>
-                      <span className="text-base md:text-lg text-anaro-text-primary/90 leading-relaxed">
-                        {point}
+                    <li key={pointIndex} className="flex gap-4 items-start">
+                      <span 
+                        className="text-anaro-lime flex-shrink-0 text-xl leading-none mt-1"
+                        aria-hidden="true"
+                      >
+                        •
                       </span>
+                      <p 
+                        className="text-[17px] md:text-[19px] text-white/95 font-normal tracking-[0.01em]"
+                        style={{ lineHeight: '1.65' }}
+                      >
+                        {point}
+                      </p>
                     </li>
                   ))}
                 </ul>
