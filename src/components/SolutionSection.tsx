@@ -35,7 +35,7 @@ const SolutionSection = () => {
           detail: "Incorporate AI into impact profiles and performance frameworks"
         },
         {
-          heading: "Department Transformations",
+          heading: "Department transformations",
           detail: "Partner with People teams on change management, leadership support, org design, and upskilling"
         },
         {
@@ -52,19 +52,19 @@ const SolutionSection = () => {
       description: "Tailored sessions for business operations teams that move the needle on adoption.",
       areas: [
         {
-          heading: "Tailored Content",
+          heading: "Tailored content",
           detail: "Designed specifically for your team's tools, workflows, and pain points"
         },
         {
-          heading: "Target Teams",
+          heading: "Target teams",
           detail: "FP&A, Customer Service, Business Operations, and other operational functions"
         },
         {
-          heading: "Engaging Format",
+          heading: "Engaging format",
           detail: "Interactive workshops that drive real behavioural change, not just awareness"
         },
         {
-          heading: "Measurable Impact",
+          heading: "Measurable impact",
           detail: "Pre and post assessment to track genuine adoption improvement"
         }
       ]
@@ -77,19 +77,19 @@ const SolutionSection = () => {
       description: "Deep-dive coaching focused on your specific use case—where the real value is.",
       areas: [
         {
-          heading: "Specific Use Cases",
+          heading: "Specific use cases",
           detail: "Focus on a concrete project or business need for your role"
         },
         {
-          heading: "Multi-Session Format",
+          heading: "Multi-session format",
           detail: "Build, experiment, and optimise solutions over several sessions"
         },
         {
-          heading: "Coaching Approach",
+          heading: "Coaching approach",
           detail: "Work together to solve your individual pain point with AI"
         },
         {
-          heading: "Lasting Results",
+          heading: "Lasting results",
           detail: "Walk away with workflows you'll actually use, not generic knowledge"
         }
       ]
