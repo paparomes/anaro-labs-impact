@@ -99,10 +99,6 @@ const ProblemSection = () => {
                 <span className="text-anaro-lime">AI matters</span>, but they're not getting{' '}
                 <span className="underline decoration-anaro-lime decoration-4 underline-offset-4">the most</span> out of it.
               </h2>
-              <p className="text-lg text-anaro-text-secondary max-w-3xl mx-auto mb-6">
-                Tooling and policy are in place. Even so, adoption often stalls and feels underwhelming vs the '10x' hype.
-              </p>
-              <div className="anaro-accent-line w-32 mx-auto"></div>
             </div>
 
             {/* Sticky trigger point */}
