@@ -17,7 +17,7 @@ const ProblemSection = () => {
     {
       id: 'hype-gap',
       icon: Puzzle,
-      shortLabel: 'Hype Gap',
+      shortLabel: 'Hype gap',
       title: "Early experiences underwhelm vs hype",
       points: [
         'Many have tried LLMs and been underwhelmed vs the "10x" hype.',
@@ -28,7 +28,7 @@ const ProblemSection = () => {
     {
       id: 'context-fatigue',
       icon: Clock,
-      shortLabel: 'Context Fatigue',
+      shortLabel: 'Context fatigue',
       title: "Context-reset fatigue makes serious use feel too costly",
       points: [
         'To do anything meaningful, people have to rebuild context every time.',
@@ -39,7 +39,7 @@ const ProblemSection = () => {
     {
       id: 'no-time',
       icon: Mountain,
-      shortLabel: 'No Time',
+      shortLabel: 'No time',
       title: "No time or space to build intuition with a non-deterministic tool",
       points: [
         'Ops people already run 40–60+ hour weeks in constant execution mode.',
@@ -91,6 +91,9 @@ const ProblemSection = () => {
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="text-center mb-12 animate-on-scroll">
+              <span className="text-anaro-lime text-sm font-semibold tracking-widest uppercase mb-4 block">
+                😓 The pain points
+              </span>
               <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
                 Most teams know {' '}
                 <span className="text-anaro-lime">AI matters</span>, but they're not getting{' '}
