@@ -6,21 +6,21 @@ const RiskReversalSection = () => {
   const guarantees = [
     {
       icon: Shield,
-      title: "Honest Assessment",
+      title: "Honest assessment",
       description: "I'll tell you if this isn't right for your team",
       detail: "Better to know upfront than waste everyone's time",
       delay: '0s'
     },
     {
       icon: Network,
-      title: "Network Referral",
+      title: "Network referral",
       description: "If I'm not the right fit, I'll connect you with someone who is",
       detail: "My network includes specialists in every business function",
       delay: '0.1s'
     },
     {
       icon: Target,
-      title: "Qualified Prospects Only",
+      title: "Qualified prospects only",
       description: "Discovery calls are for teams ready to invest in change",
       detail: "Investment range: $3,000 - $20,000 (we'll discuss if it fits)",
       delay: '0.2s'

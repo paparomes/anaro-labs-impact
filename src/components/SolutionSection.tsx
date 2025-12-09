@@ -18,8 +18,8 @@ const SolutionSection = () => {
     {
       id: 0,
       icon: Compass,
-      label: "Strategic Advisory",
-      title: "Strategic Advisory on GenAI Adoption",
+      label: "Strategic advisory",
+      title: "Strategic advisory on GenAI adoption",
       description: "Comprehensive guidance on embedding AI behaviours across your entire organisation.",
       areas: [
         {
@@ -47,8 +47,8 @@ const SolutionSection = () => {
     {
       id: 1,
       icon: Users,
-      label: "Group Workshops",
-      title: "Team-Specific Group Workshops",
+      label: "Group workshops",
+      title: "Team-specific group workshops",
       description: "Tailored sessions for business operations teams that move the needle on adoption.",
       areas: [
         {
@@ -72,8 +72,8 @@ const SolutionSection = () => {
     {
       id: 2,
       icon: UserCheck,
-      label: "1:1 Collaboration",
-      title: "1:1 Project-Based Collaboration",
+      label: "1:1 collaboration",
+      title: "1:1 project-based collaboration",
       description: "Deep-dive coaching focused on your specific use case—where the real value is.",
       areas: [
         {
