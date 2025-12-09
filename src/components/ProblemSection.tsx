@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Puzzle, Clock, Mountain, LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -51,10 +51,41 @@ const ProblemSection = () => {
   ];
 
   const [activeId, setActiveId] = useState<string>(problems[0].id);
+  const [isSticky, setIsSticky] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const stickyTriggerRef = useRef<HTMLDivElement>(null);
   const activeProblem = problems.find(p => p.id === activeId)!;
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current || !stickyTriggerRef.current) return;
+      
+      const sectionRect = sectionRef.current.getBoundingClientRect();
+      const triggerRect = stickyTriggerRef.current.getBoundingClientRect();
+      
+      // Only apply sticky behavior on mobile (< 768px)
+      const isMobile = window.innerWidth < 768;
+      
+      if (isMobile) {
+        // Sticky when trigger passes top of viewport and section is still visible
+        const shouldBeSticky = triggerRect.top <= 0 && sectionRect.bottom > 150;
+        setIsSticky(shouldBeSticky);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
   return (
-    <section id="problem" className="section-spacing py-16">
+    <section id="problem" ref={sectionRef} className="section-spacing py-16">
       <div className="anaro-section-bg">
         <div className="container-anaro py-16">
           <div className="max-w-6xl mx-auto">
@@ -62,7 +93,8 @@ const ProblemSection = () => {
             <div className="text-center mb-12 animate-on-scroll">
               <h2 className="text-3xl md:text-5xl font-bold text-anaro-text-primary mb-6">
                 Most teams know {' '}
-                <span className="text-anaro-lime">AI matters</span>, but they're not getting the most out of it.
+                <span className="text-anaro-lime">AI matters</span>, but they're not getting{' '}
+                <span className="underline decoration-anaro-lime decoration-4 underline-offset-4">the most</span> out of it.
               </h2>
               <p className="text-lg text-anaro-text-secondary max-w-3xl mx-auto mb-6">
                 Tooling and policy are in place. Even so, adoption often stalls and feels underwhelming vs the '10x' hype.
@@ -70,57 +102,71 @@ const ProblemSection = () => {
               <div className="anaro-accent-line w-32 mx-auto"></div>
             </div>
 
-            {/* Icon Selector Row */}
+            {/* Sticky trigger point */}
+            <div ref={stickyTriggerRef} className="h-0" />
+
+            {/* Icon Selector Row - Sticky on mobile */}
             <div 
-              className="flex justify-center gap-6 md:gap-12 mb-8"
+              className={cn(
+                "flex justify-center gap-6 md:gap-12 mb-8 py-4 transition-all duration-300 z-40",
+                isSticky && "fixed top-0 left-0 right-0 bg-anaro-charcoal/95 backdrop-blur-sm border-b border-anaro-charcoal-lighter shadow-lg"
+              )}
               role="tablist"
               aria-label="Problem categories"
             >
-              {problems.map((problem) => {
-                const isActive = problem.id === activeId;
-                const Icon = problem.icon;
-                
-                return (
-                  <button
-                    key={problem.id}
-                    role="tab"
-                    aria-selected={isActive}
-                    aria-controls="problem-content-panel"
-                    onClick={() => setActiveId(problem.id)}
-                    className={cn(
-                      "flex flex-col items-center gap-3 transition-all duration-300 cursor-pointer group",
-                      "focus:outline-none focus-visible:ring-2 focus-visible:ring-anaro-lime focus-visible:ring-offset-2 focus-visible:ring-offset-anaro-charcoal rounded-lg p-2"
-                    )}
-                  >
-                    <div 
+              <div className={cn(
+                "flex justify-center gap-6 md:gap-12",
+                isSticky && "container-anaro"
+              )}>
+                {problems.map((problem) => {
+                  const isActive = problem.id === activeId;
+                  const Icon = problem.icon;
+                  
+                  return (
+                    <button
+                      key={problem.id}
+                      role="tab"
+                      aria-selected={isActive}
+                      aria-controls="problem-content-panel"
+                      onClick={() => setActiveId(problem.id)}
                       className={cn(
-                        "w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-300",
-                        isActive 
-                          ? "bg-anaro-lime scale-110 shadow-lg shadow-anaro-lime/30" 
-                          : "bg-anaro-charcoal-lighter border-2 border-anaro-lime/30 opacity-60 group-hover:opacity-80 group-hover:border-anaro-lime/50"
+                        "flex flex-col items-center gap-2 md:gap-3 transition-all duration-300 cursor-pointer group",
+                        "focus:outline-none focus-visible:ring-2 focus-visible:ring-anaro-lime focus-visible:ring-offset-2 focus-visible:ring-offset-anaro-charcoal rounded-lg p-2"
                       )}
                     >
-                      <Icon 
+                      <div 
                         className={cn(
-                          "h-8 w-8 md:h-10 md:w-10 transition-colors duration-300",
-                          isActive ? "text-anaro-charcoal" : "text-anaro-lime"
-                        )} 
-                      />
-                    </div>
-                    <span 
-                      className={cn(
-                        "text-sm md:text-base font-medium transition-all duration-300",
-                        isActive 
-                          ? "text-anaro-lime" 
-                          : "text-anaro-text-secondary opacity-60 group-hover:opacity-80"
-                      )}
-                    >
-                      {problem.shortLabel}
-                    </span>
-                  </button>
-                );
-              })}
+                          "w-14 h-14 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-300",
+                          isActive 
+                            ? "bg-anaro-lime scale-110 shadow-lg shadow-anaro-lime/30" 
+                            : "bg-anaro-charcoal-lighter border-2 border-anaro-lime/30 opacity-60 group-hover:opacity-80 group-hover:border-anaro-lime/50"
+                        )}
+                      >
+                        <Icon 
+                          className={cn(
+                            "h-7 w-7 md:h-10 md:w-10 transition-colors duration-300",
+                            isActive ? "text-anaro-charcoal" : "text-anaro-lime"
+                          )} 
+                        />
+                      </div>
+                      <span 
+                        className={cn(
+                          "text-xs md:text-base font-medium transition-all duration-300 whitespace-nowrap",
+                          isActive 
+                            ? "text-anaro-lime" 
+                            : "text-anaro-text-secondary opacity-60 group-hover:opacity-80"
+                        )}
+                      >
+                        {problem.shortLabel}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
+
+            {/* Spacer when sticky is active */}
+            {isSticky && <div className="h-28 md:h-0" />}
 
             {/* Content Panel */}
             <div
@@ -136,11 +182,14 @@ const ProblemSection = () => {
                 <h3 className="text-xl md:text-2xl font-bold text-anaro-text-primary mb-6 text-center">
                   {activeProblem.title}
                 </h3>
-                <ul className="text-anaro-text-secondary leading-relaxed space-y-4 text-left">
+                {/* Improved legibility: larger text, better line-height, higher contrast */}
+                <ul className="space-y-5">
                   {activeProblem.points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex gap-3">
-                      <span className="text-anaro-lime mt-1.5 flex-shrink-0">•</span>
-                      <span>{point}</span>
+                    <li key={pointIndex} className="flex gap-4">
+                      <span className="text-anaro-lime mt-1 flex-shrink-0 text-lg">•</span>
+                      <span className="text-base md:text-lg text-anaro-text-primary/90 leading-relaxed">
+                        {point}
+                      </span>
                     </li>
                   ))}
                 </ul>
