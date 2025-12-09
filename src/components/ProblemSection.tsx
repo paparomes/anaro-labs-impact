@@ -108,7 +108,7 @@ const ProblemSection = () => {
             <div 
               className={cn(
                 "flex justify-center gap-6 md:gap-12 mb-4 md:mb-8 py-2 md:py-4 transition-all duration-300 z-30",
-                isSticky && "fixed top-0 left-0 right-0 bg-anaro-charcoal/95 backdrop-blur-sm border-b border-anaro-charcoal-lighter shadow-lg"
+                isSticky && "fixed top-[73px] left-0 right-0 bg-anaro-charcoal/95 backdrop-blur-sm border-b border-anaro-charcoal-lighter shadow-lg"
               )}
               role="tablist"
               aria-label="Problem categories"
