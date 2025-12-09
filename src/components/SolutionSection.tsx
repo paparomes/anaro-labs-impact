@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
-import { Compass, Users, UserCheck } from 'lucide-react';
+import { Compass, Users, UserCheck, LucideIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+interface Solution {
+  id: number;
+  icon: LucideIcon;
+  label: string;
+  title: string;
+  description: string;
+  areas: { heading: string; detail: string }[];
+}
 
 const SolutionSection = () => {
   const [activeId, setActiveId] = useState(0);
 
-  const solutions = [
+  const solutions: Solution[] = [
     {
       id: 0,
       icon: Compass,
@@ -104,30 +114,52 @@ const SolutionSection = () => {
             <div className="anaro-accent-line w-32 mx-auto"></div>
           </div>
 
-          {/* Solution Tabs */}
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center mb-10 md:mb-12">
+          {/* Icon Selector Row - Compact circular style like ProblemSection */}
+          <div 
+            className="flex justify-center gap-6 md:gap-12 mb-8 py-4"
+            role="tablist"
+            aria-label="Solution approaches"
+          >
             {solutions.map((solution) => {
-              const IconComponent = solution.icon;
               const isActive = solution.id === activeId;
+              const Icon = solution.icon;
               
               return (
                 <button
                   key={solution.id}
+                  role="tab"
+                  aria-selected={isActive}
                   onClick={() => setActiveId(solution.id)}
-                  className={`
-                    group flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300
-                    ${isActive 
-                      ? 'bg-anaro-lime text-anaro-charcoal shadow-lg shadow-anaro-lime/20' 
-                      : 'bg-anaro-charcoal-light border border-anaro-lime/20 text-white hover:border-anaro-lime/50'
-                    }
-                  `}
-                  aria-pressed={isActive}
+                  className={cn(
+                    "flex flex-col items-center gap-2 md:gap-3 transition-all duration-300 cursor-pointer group",
+                    "focus:outline-none focus-visible:ring-2 focus-visible:ring-anaro-lime focus-visible:ring-offset-2 focus-visible:ring-offset-anaro-charcoal rounded-lg p-2"
+                  )}
                 >
-                  <IconComponent 
-                    size={24} 
-                    className={isActive ? 'text-anaro-charcoal' : 'text-anaro-lime'}
-                  />
-                  <span className="font-semibold text-lg">{solution.label}</span>
+                  <div 
+                    className={cn(
+                      "w-14 h-14 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-300",
+                      isActive 
+                        ? "bg-anaro-lime scale-110 shadow-lg shadow-anaro-lime/30" 
+                        : "bg-anaro-charcoal-lighter border-2 border-anaro-lime/30 opacity-60 group-hover:opacity-80 group-hover:border-anaro-lime/50"
+                    )}
+                  >
+                    <Icon 
+                      className={cn(
+                        "h-7 w-7 md:h-10 md:w-10 transition-colors duration-300",
+                        isActive ? "text-anaro-charcoal" : "text-anaro-lime"
+                      )} 
+                    />
+                  </div>
+                  <span 
+                    className={cn(
+                      "text-xs md:text-base font-medium transition-all duration-300 whitespace-nowrap",
+                      isActive 
+                        ? "text-anaro-lime" 
+                        : "text-anaro-text-secondary opacity-60 group-hover:opacity-80"
+                    )}
+                  >
+                    {solution.label}
+                  </span>
                 </button>
               );
             })}
